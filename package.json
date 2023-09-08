@@ -15,7 +15,9 @@
     "commitlint": "commitlint --config commitlint.config.cjs -e -V"
   },
   "dependencies": {
-    "astro": "^3.0.10"
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.10",
+    "tailwindcss": "^3.0.24"
   },
   "config": {
     "commitizen": {
