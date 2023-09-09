@@ -5,6 +5,12 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
-    }
-  }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules" // 排除的文件或目录
+  ]
 }

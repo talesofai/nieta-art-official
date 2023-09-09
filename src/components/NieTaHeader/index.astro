@@ -1,0 +1,94 @@
+---
+import Logo from '@assets/images/logo.png';
+import NieTaText from '@assets/text/nieta.svg';
+import Line from '@assets/images/line.svg';
+import Assistant from '@assets/images/assistant.svg';
+import TextContent from '@assets/text/text.svg';
+import NieTaBottomText from '@assets/text/bottom-nieta.svg';
+import JoinCommunityButton from './JoinCommunityButton.astro';
+import StartNieTaButton from './StartNieTaButton.astro';
+---
+
+{/* logo */}
+<div class="flex items-center absolute top-[16px] left-[242px]">
+  <img src={Logo.src} width={Logo.width} height={Logo.height} alt="Logo" decoding="async" loading="lazy" />
+  <img
+    src={NieTaText.src}
+    width={NieTaText.width}
+    height={NieTaText.height}
+    alt="NieTa"
+    decoding="async"
+    loading="lazy"
+    class="ml-[8px]"
+  />
+</div>
+
+{/* line */}
+<div class="absolute top-[80px] right-[242px]">
+  <img src={Line.src} alt="Line" width={Line.width} height={Line.height} decoding="async" loading="lazy" />
+</div>
+
+{/* assistant */}
+<div class="absolute top-[91px] left-[242px]">
+  <img
+    src={Assistant.src}
+    width={Assistant.width}
+    height={Assistant.height}
+    decoding="async"
+    loading="lazy"
+    alt="assistant"
+  />
+</div>
+
+{/* text content */}
+<div class="absolute top-[304px] right-[274px]">
+  <img
+    src={TextContent.src}
+    alt="text"
+    width={TextContent.width}
+    height={TextContent.height}
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+
+{/* two buttons */}
+
+<div class="flex absolute top-[532px] right-[242px]">
+  <JoinCommunityButton />
+
+  <StartNieTaButton />
+</div>
+
+{/* nieta text */}
+<div class="absolute right-[242px] bottom-0">
+  <img
+    src={NieTaBottomText.src}
+    alt="NieTaBottomText"
+    width={NieTaBottomText.width}
+    height={NieTaBottomText.height}
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+
+<script>
+  const startNietTa = document.querySelector('#StartNieTa') as HTMLImageElement;
+  const joinCommunity = document.querySelector('#JoinCommunity') as HTMLImageElement;
+
+  joinCommunity?.addEventListener('mouseenter', () => {
+    joinCommunity.src = 'src/assets/button/join-community-active.svg';
+  });
+
+  joinCommunity?.addEventListener('mouseleave', () => {
+    joinCommunity.src = 'src/assets/button/join-community.svg';
+  });
+
+  startNietTa?.addEventListener('mouseenter', () => {
+    startNietTa.src = 'src/assets/button/start-nieta-active.svg';
+  });
+
+  startNietTa?.addEventListener('mouseleave', () => {
+    startNietTa.src = 'src/assets/button/start-nieta.svg';
+  });
+</script>
