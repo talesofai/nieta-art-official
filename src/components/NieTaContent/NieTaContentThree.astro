@@ -1,0 +1,72 @@
+---
+import Assistant from '@assets/images/assistant-trains.svg';
+import LineTopRight from '@assets/images/line3.svg';
+import LineBottomRight from '@assets/images/line4.svg';
+import TrainsContent from '@assets/text/trains.svg';
+import UploadModal from './UploadModal.astro';
+---
+
+<!-- assistant -->
+<div class="absolute top-[4px] left-[242px]">
+  <img
+    src={Assistant.src}
+    alt="Assistant"
+    width={Assistant.width}
+    height={Assistant.height}
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+
+<!-- lines -->
+<div class="absolute top-[40px] right-[242px]">
+  <img
+    src={LineTopRight.src}
+    alt="LineTopRight"
+    width={LineTopRight.width}
+    height={LineTopRight.height}
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+
+<!-- text -->
+<div class="absolute top-[148px] right-[242px]">
+  <img
+    src={TrainsContent.src}
+    alt="TrainsContent"
+    width={TrainsContent.width}
+    height={TrainsContent.height}
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+
+<!-- button -->
+<div class="absolute top-[300px] right-[519px]">
+  <UploadModal />
+</div>
+
+<!-- lines -->
+<div class="absolute bottom-[40px] right-[242px]">
+  <img
+    src={LineBottomRight.src}
+    alt="LineBottomRight"
+    width={LineBottomRight.width}
+    height={LineBottomRight.height}
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+
+<script>
+  const UploadModal = document.querySelector('#UploadModal') as HTMLImageElement;
+
+  UploadModal?.addEventListener('mouseenter', () => {
+    UploadModal.src = 'src/assets/button/upload-active.svg';
+  });
+
+  UploadModal?.addEventListener('mouseleave', () => {
+    UploadModal.src = 'src/assets/button/upload.svg';
+  });
+</script>
