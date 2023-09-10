@@ -39,6 +39,7 @@ import UploadModal from './UploadModal.astro';
     height={TrainsContent.height}
     decoding="async"
     loading="lazy"
+    class="trains"
   />
 </div>
 
@@ -56,6 +57,7 @@ import UploadModal from './UploadModal.astro';
     height={LineBottomRight.height}
     decoding="async"
     loading="lazy"
+    class="bottomline"
   />
 </div>
 
@@ -75,11 +77,38 @@ import UploadModal from './UploadModal.astro';
       right: 373px;
     }
   }
+
+  @media (min-width: 744px) and (max-width: 1439px) {
+    #line1 {
+      right: 48px;
+    }
+
+    #line2 {
+      left: 48px;
+      bottom: 40px;
+    }
+    #button {
+      left: 245px;
+      right: 245px;
+      top: 303px;
+    }
+    #text {
+      top: 168px;
+      left: 106px;
+      right: 106px;
+    }
+    #assistant {
+      left: 65px;
+      right: 65px;
+      top: 431px;
+    }
+  }
 </style>
 
 <script>
   const UploadModal = document.querySelector('#UploadModal') as HTMLImageElement;
-
+  const trainsNieta = document.querySelector('.trains') as HTMLImageElement;
+  const BottomLine = document.querySelector('.bottomline') as HTMLImageElement;
   UploadModal?.addEventListener('mouseenter', () => {
     UploadModal.src = 'src/assets/button/upload-active.svg';
   });
@@ -87,4 +116,18 @@ import UploadModal from './UploadModal.astro';
   UploadModal?.addEventListener('mouseleave', () => {
     UploadModal.src = 'src/assets/button/upload.svg';
   });
+
+  const handleResize = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 744 && screenWidth < 1440) {
+      trainsNieta.src = '/src/assets/text/trains-744.svg';
+      BottomLine.src = '/src/assets/images/line4-744.svg';
+    } else if (screenWidth === 1440) {
+      trainsNieta.src = '/src/assets/text/trains.svg';
+      BottomLine.src = '/src/assets/images/line4.svg';
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
 </script>

@@ -40,6 +40,7 @@ import Together from '@assets/text/together.svg';
     height={ContentNieTa.height}
     decoding="async"
     loading="lazy"
+    class="text"
   />
 </div>
 
@@ -95,4 +96,42 @@ import Together from '@assets/text/together.svg';
       right: 0;
     }
   }
+  @media (min-width: 744px) and (max-width: 1439px) {
+    #line {
+      right: 48px;
+    }
+    #text {
+      top: 164px;
+      left: 123px;
+      right: 123px;
+    }
+    #assistantNieTa {
+      top: 436px;
+      left: 102px;
+      right: 102px;
+    }
+    #together {
+      left: 0;
+      right: 0;
+    }
+    #line1 {
+      left: 52px;
+    }
+  }
 </style>
+
+<script>
+  const contentNieta = document.querySelector('.text') as HTMLImageElement;
+
+  const handleResize = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 744 && screenWidth < 1440) {
+      contentNieta.src = '/src/assets/text/content-nieta-744.svg';
+    } else if (screenWidth === 1440) {
+      contentNieta.src = '/src/assets/text/content-nieta.svg';
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
+</script>

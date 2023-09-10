@@ -1,6 +1,22 @@
 ---
 import NieTaContent from '@assets/text/content-nieta2.svg';
 import Barrage from '@assets/images/barrage.svg';
+
+const BarrageList = [
+  '/src/assets/barrage/item1.svg',
+  '/src/assets/barrage/item2.svg',
+  '/src/assets/barrage/item3.svg',
+  '/src/assets/barrage/item4.svg',
+  '/src/assets/barrage/item5.svg',
+];
+
+const BarrageList2 = [
+  '/src/assets/barrage/item6.svg',
+  '/src/assets/barrage/item7.svg',
+  '/src/assets/barrage/item8.svg',
+  '/src/assets/barrage/item9.svg',
+  '/src/assets/barrage/item10.svg',
+];
 ---
 
 <!-- text -->
@@ -12,20 +28,32 @@ import Barrage from '@assets/images/barrage.svg';
     height={NieTaContent.height}
     decoding="async"
     loading="lazy"
+    class="text2"
   />
 </div>
 
-<!-- barrage -->
-<div class="absolute left-[246px] top-[328px]" id="barrage">
-  <img
-    src={Barrage.src}
-    alt="Barrage"
-    width={Barrage.width}
-    height={Barrage.height}
-    decoding="async"
-    loading="lazy"
-    class="barrage"
-  />
+<div class="barrage-container">
+  <!-- barrage -->
+  <!-- <div class="absolute left-[246px] right-[246px] top-[328px] flex w-[1436px]" id="barrage">
+    {
+      BarrageList.map((src: string) => (
+        <div class="barrage-item">
+          <img src={src} alt="barrage" decoding="async" loading="lazy" />
+        </div>
+      ))
+    }
+  </div> -->
+
+  <!-- barrage -->
+  <!-- <div class="absolute left-[246px] right-[246px] top-[432px] flex w-[1436px]" id="barrage">
+    {
+      BarrageList2.map((src: string) => (
+        <div class="barrage-item">
+          <img src={src} alt="barrage" decoding="async" loading="lazy" />
+        </div>
+      ))
+    }
+  </div> -->
 </div>
 
 <style>
@@ -35,20 +63,49 @@ import Barrage from '@assets/images/barrage.svg';
       left: 96px;
     }
   }
+  @media (min-width: 744px) and (max-width: 1439px) {
+    #text {
+      left: 82px;
+      right: 82px;
+    }
+  }
+  .barrage-item:not(:first-of-type) {
+    margin-left: 84px;
+  }
 </style>
 
 <script>
-  const barrageElement = document.querySelector('.barrage') as HTMLImageElement;
-
+  const contentNieTa = document.querySelector('.text2') as HTMLImageElement;
   const handleResize = () => {
     const screenWidth = window.innerWidth;
-    if (screenWidth >= 1440 && screenWidth < 1920) {
-      barrageElement.src = '/src/assets/images/barrage-1440.svg';
-    } else if (screenWidth === 1920) {
-      barrageElement.src = '/src/assets/images/barrage.svg';
+
+    if (screenWidth >= 744 && screenWidth < 1440) {
+      contentNieTa.src = '/src/assets/text/content-nieta2-744.svg';
+    } else {
+      contentNieTa.src = '/src/assets/text/content-nieta2.svg';
     }
   };
 
   window.addEventListener('resize', handleResize);
   handleResize();
+
+  // linear animation
+  // const barrageContainer = document.getElementById('barrage')!;
+  // const containerWidth = barrageContainer.offsetWidth;
+  // function updateBarragePosition() {
+  //   const barrageItems = document.getElementsByClassName('barrage-item') as unknown as HTMLElement[];
+
+  //   for (let i = 0; i < barrageItems.length; i++) {
+  //     const item = barrageItems[i];
+  //     const currentPosition = item.style.transform ? parseFloat(item.style.transform.replace(/[^\d.-]/g, '')) : 0;
+  //     let newPosition = currentPosition - 1;
+
+  //     if (newPosition < -containerWidth) {
+  //       newPosition = containerWidth;
+  //     }
+
+  //     item.style.transform = `translateX(${newPosition}px)`;
+  //   }
+  // }
+  // setInterval(updateBarragePosition, 2);
 </script>
