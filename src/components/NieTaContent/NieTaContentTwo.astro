@@ -1,6 +1,5 @@
 ---
 import NieTaContent from '@assets/text/content-nieta2.svg';
-import Barrage from '@assets/images/barrage.svg';
 
 const BarrageList = [
   '/src/assets/barrage/item1.svg',
@@ -32,9 +31,9 @@ const BarrageList2 = [
   />
 </div>
 
-<div class="barrage-container">
-  <!-- barrage -->
-  <!-- <div class="absolute left-[246px] right-[246px] top-[328px] flex w-[1436px]" id="barrage">
+<!-- <div class="barrage-container"> -->
+<!-- barrage -->
+<!-- <div class="absolute left-[246px] right-[246px] top-[328px] flex w-[1436px]" id="barrage">
     {
       BarrageList.map((src: string) => (
         <div class="barrage-item">
@@ -44,8 +43,8 @@ const BarrageList2 = [
     }
   </div> -->
 
-  <!-- barrage -->
-  <!-- <div class="absolute left-[246px] right-[246px] top-[432px] flex w-[1436px]" id="barrage">
+<!-- barrage -->
+<!-- <div class="absolute left-[246px] right-[246px] top-[432px] flex w-[1436px]" id="barrage">
     {
       BarrageList2.map((src: string) => (
         <div class="barrage-item">
@@ -54,12 +53,11 @@ const BarrageList2 = [
       ))
     }
   </div> -->
-</div>
+<!-- </div> -->
 
 <style>
   @media (min-width: 1440px) and (max-width: 1919px) {
-    #text,
-    #barrage {
+    #text {
       left: 96px;
     }
   }
@@ -69,9 +67,9 @@ const BarrageList2 = [
       right: 82px;
     }
   }
-  .barrage-item:not(:first-of-type) {
+  /* .barrage-item:not(:first-of-type) {
     margin-left: 84px;
-  }
+  } */
 </style>
 
 <script>
