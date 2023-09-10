@@ -4,10 +4,13 @@ import Copyright from '@assets/images/copyright.svg';
 ---
 
 <footer class="relative" style="background: #131B22;">
-  <div class="absolute left-[242px] top-[20px]">
+  <!-- text -->
+  <div class="absolute left-[242px] top-[20px]" id="text">
     <img src={Text.src} alt="Text" width={Text.width} height={Text.height} decoding="async" loading="lazy" />
   </div>
-  <div class="absolute right-[242px] top-[24px]">
+
+  <!-- copyright -->
+  <div class="absolute right-[242px] top-[24px]" id="copyright">
     <img
       src={Copyright.src}
       alt="Copyright"
@@ -18,3 +21,14 @@ import Copyright from '@assets/images/copyright.svg';
     />
   </div>
 </footer>
+
+<style>
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    #text {
+      left: 96px;
+    }
+    #copyright {
+      right: 96px;
+    }
+  }
+</style>

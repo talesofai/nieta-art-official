@@ -20,7 +20,7 @@ import Together from '@assets/text/together.svg';
 </div>
 
 <!-- lines -->
-<div class="absolute right-[242px] top-[40px]">
+<div class="absolute right-[242px] top-[40px]" id="line">
   <img
     src={LineTopRight.src}
     alt="Line"
@@ -32,7 +32,7 @@ import Together from '@assets/text/together.svg';
 </div>
 
 <!-- text -->
-<div class="absolute left-[242px] top-[380px]">
+<div class="absolute left-[242px] top-[380px]" id="text">
   <img
     src={ContentNieTa.src}
     alt="ContentNieTa"
@@ -43,7 +43,8 @@ import Together from '@assets/text/together.svg';
   />
 </div>
 
-<div class="absolute right-[242px] top-[164px]">
+<!-- assistantNieTa -->
+<div class="absolute right-[242px] top-[164px]" id="assistantNieTa">
   <img
     src={AssistantNieTa.src}
     alt="AssistantNieTa"
@@ -55,7 +56,7 @@ import Together from '@assets/text/together.svg';
 </div>
 
 <!-- lines -->
-<div class="absolute left-[246px] bottom-[40px]">
+<div class="absolute left-[246px] bottom-[40px]" id="line1">
   <img
     src={LineBottomLeft.src}
     alt="Line"
@@ -66,7 +67,8 @@ import Together from '@assets/text/together.svg';
   />
 </div>
 
-<div class="absolute right-0 bottom-0">
+<!-- together -->
+<div class="absolute right-0 bottom-0" id="together">
   <img
     src={Together.src}
     alt="Together"
@@ -76,3 +78,21 @@ import Together from '@assets/text/together.svg';
     loading="lazy"
   />
 </div>
+
+<style>
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    #line,
+    #assistantNieTa,
+    #together {
+      right: 96px;
+    }
+    #text,
+    #line1 {
+      left: 96px;
+    }
+
+    #together {
+      right: 0;
+    }
+  }
+</style>

@@ -7,7 +7,7 @@ import UploadModal from './UploadModal.astro';
 ---
 
 <!-- assistant -->
-<div class="absolute top-[4px] left-[242px]">
+<div class="absolute top-[4px] left-[242px]" id="assistant">
   <img
     src={Assistant.src}
     alt="Assistant"
@@ -19,7 +19,7 @@ import UploadModal from './UploadModal.astro';
 </div>
 
 <!-- lines -->
-<div class="absolute top-[40px] right-[242px]">
+<div class="absolute top-[40px] right-[242px]" id="line1">
   <img
     src={LineTopRight.src}
     alt="LineTopRight"
@@ -31,7 +31,7 @@ import UploadModal from './UploadModal.astro';
 </div>
 
 <!-- text -->
-<div class="absolute top-[148px] right-[242px]">
+<div class="absolute top-[148px] right-[242px]" id="text">
   <img
     src={TrainsContent.src}
     alt="TrainsContent"
@@ -43,12 +43,12 @@ import UploadModal from './UploadModal.astro';
 </div>
 
 <!-- button -->
-<div class="absolute top-[300px] right-[519px]">
+<div class="absolute top-[300px] right-[519px]" id="button">
   <UploadModal />
 </div>
 
 <!-- lines -->
-<div class="absolute bottom-[40px] right-[242px]">
+<div class="absolute bottom-[40px] right-[242px]" id="line2">
   <img
     src={LineBottomRight.src}
     alt="LineBottomRight"
@@ -58,6 +58,24 @@ import UploadModal from './UploadModal.astro';
     loading="lazy"
   />
 </div>
+
+<style>
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    #assistant {
+      left: 96px;
+    }
+
+    #line1,
+    #line2,
+    #text {
+      right: 96px;
+    }
+
+    #button {
+      right: 373px;
+    }
+  }
+</style>
 
 <script>
   const UploadModal = document.querySelector('#UploadModal') as HTMLImageElement;

@@ -14,7 +14,7 @@ import StartNieTaButton from './StartNieTaButton.astro';
   style="background: linear-gradient(156deg, #151a31 0%, #191e37 14.73%, #12172c 35.15%, #0d1317 76.29%);"
 >
   {/* logo */}
-  <div class="flex items-center absolute top-[16px] left-[242px]">
+  <div class="flex items-center absolute top-[16px] left-[242px]" id="logo">
     <img src={Logo.src} width={Logo.width} height={Logo.height} alt="Logo" decoding="async" loading="lazy" />
     <img
       src={NieTaText.src}
@@ -28,12 +28,12 @@ import StartNieTaButton from './StartNieTaButton.astro';
   </div>
 
   {/* line */}
-  <div class="absolute top-[80px] right-[242px]">
+  <div class="absolute top-[80px] right-[242px]" id="line">
     <img src={Line.src} alt="Line" width={Line.width} height={Line.height} decoding="async" loading="lazy" />
   </div>
 
   {/* assistant */}
-  <div class="absolute top-[91px] left-[242px]">
+  <div class="absolute top-[91px] left-[242px]" id="assistant">
     <img
       src={Assistant.src}
       width={Assistant.width}
@@ -45,7 +45,7 @@ import StartNieTaButton from './StartNieTaButton.astro';
   </div>
 
   {/* text content */}
-  <div class="absolute top-[304px] right-[274px]">
+  <div class="absolute top-[304px] right-[274px]" id="text">
     <img
       src={TextContent.src}
       alt="text"
@@ -58,14 +58,14 @@ import StartNieTaButton from './StartNieTaButton.astro';
 
   {/* two buttons */}
 
-  <div class="flex absolute top-[532px] right-[242px]">
+  <div class="flex absolute top-[532px] right-[242px]" id="buttons">
     <JoinCommunityButton />
 
     <StartNieTaButton />
   </div>
 
   {/* nieta text */}
-  <div class="absolute right-[242px] bottom-0">
+  <div class="absolute right-[242px] bottom-0" id="bottom-nieta">
     <img
       src={NieTaBottomText.src}
       alt="NieTaBottomText"
@@ -97,3 +97,22 @@ import StartNieTaButton from './StartNieTaButton.astro';
     startNietTa.src = 'src/assets/button/start-nieta.svg';
   });
 </script>
+
+<style>
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    #logo,
+    #assistant {
+      left: 96px;
+    }
+    #line,
+    #buttons {
+      right: 96px;
+    }
+    #text {
+      right: 124px;
+    }
+    #bottom-nieta {
+      right: 0;
+    }
+  }
+</style>

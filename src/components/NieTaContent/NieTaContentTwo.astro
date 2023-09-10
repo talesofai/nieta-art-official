@@ -4,7 +4,7 @@ import Barrage from '@assets/images/barrage.svg';
 ---
 
 <!-- text -->
-<div class="absolute left-[246px] top-[80px]">
+<div class="absolute left-[246px] top-[80px]" id="text">
   <img
     src={NieTaContent.src}
     alt="NieTaContent"
@@ -16,6 +16,39 @@ import Barrage from '@assets/images/barrage.svg';
 </div>
 
 <!-- barrage -->
-<div class="absolute left-[246px] top-[328px]">
-  <img src={Barrage.src} alt="Barrage" width={Barrage.width} height={Barrage.height} decoding="async" loading="lazy" />
+<div class="absolute left-[246px] top-[328px]" id="barrage">
+  <img
+    src={Barrage.src}
+    alt="Barrage"
+    width={Barrage.width}
+    height={Barrage.height}
+    decoding="async"
+    loading="lazy"
+    class="barrage"
+  />
 </div>
+
+<style>
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    #text,
+    #barrage {
+      left: 96px;
+    }
+  }
+</style>
+
+<script>
+  const barrageElement = document.querySelector('.barrage') as HTMLImageElement;
+
+  const handleResize = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1440 && screenWidth < 1920) {
+      barrageElement.src = '/src/assets/images/barrage-1440.svg';
+    } else if (screenWidth === 1920) {
+      barrageElement.src = '/src/assets/images/barrage.svg';
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
+</script>
