@@ -8,7 +8,7 @@ import Together from '@assets/text/together.svg';
 ---
 
 <!-- createStories -->
-<div class="absolute top-0">
+<div class="absolute" id="createStories">
   <img
     src={CreateStories.src}
     alt="CreateStories"
@@ -20,44 +20,22 @@ import Together from '@assets/text/together.svg';
 </div>
 
 <!-- lines -->
-<div class="absolute right-[242px] top-[40px]" id="line">
-  <img
-    src={LineTopRight.src}
-    alt="Line"
-    width={LineTopRight.width}
-    height={LineTopRight.height}
-    decoding="async"
-    loading="lazy"
-  />
+<div class="absolute" id="line-2-top-right">
+  <img src={LineTopRight.src} alt="Line" decoding="async" loading="lazy" />
 </div>
 
 <!-- text -->
-<div class="absolute left-[242px] top-[380px]" id="text">
-  <img
-    src={ContentNieTa.src}
-    alt="ContentNieTa"
-    width={ContentNieTa.width}
-    height={ContentNieTa.height}
-    decoding="async"
-    loading="lazy"
-    class="text"
-  />
+<div class="absolute" id="text-2">
+  <img src={ContentNieTa.src} alt="ContentNieTa" decoding="async" loading="lazy" />
 </div>
 
 <!-- assistantNieTa -->
-<div class="absolute right-[242px] top-[164px]" id="assistantNieTa">
-  <img
-    src={AssistantNieTa.src}
-    alt="AssistantNieTa"
-    width={ContentNieTa.width}
-    height={ContentNieTa.height}
-    decoding="async"
-    loading="lazy"
-  />
+<div class="absolute" id="assistantNieTa">
+  <img src={AssistantNieTa.src} alt="AssistantNieTa" decoding="async" loading="lazy" />
 </div>
 
 <!-- lines -->
-<div class="absolute left-[246px] bottom-[40px]" id="line1">
+<div class="absolute" id="line-2-bottom-left">
   <img
     src={LineBottomLeft.src}
     alt="Line"
@@ -69,7 +47,7 @@ import Together from '@assets/text/together.svg';
 </div>
 
 <!-- together -->
-<div class="absolute right-0 bottom-0" id="together">
+<div class="absolute" id="together">
   <img
     src={Together.src}
     alt="Together"
@@ -80,58 +58,6 @@ import Together from '@assets/text/together.svg';
   />
 </div>
 
-<style>
-  @media (min-width: 1440px) and (max-width: 1919px) {
-    #line,
-    #assistantNieTa,
-    #together {
-      right: 96px;
-    }
-    #text,
-    #line1 {
-      left: 96px;
-    }
+<style></style>
 
-    #together {
-      right: 0;
-    }
-  }
-  @media (min-width: 744px) and (max-width: 1439px) {
-    #line {
-      right: 48px;
-    }
-    #text {
-      top: 164px;
-      left: 123px;
-      right: 123px;
-    }
-    #assistantNieTa {
-      top: 436px;
-      left: 102px;
-      right: 102px;
-    }
-    #together {
-      left: 0;
-      right: 0;
-    }
-    #line1 {
-      left: 52px;
-    }
-  }
-</style>
-
-<script>
-  const contentNieta = document.querySelector('.text') as HTMLImageElement;
-
-  const handleResize = () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 744 && screenWidth < 1440) {
-      contentNieta.src = '/src/assets/text/content-nieta-744.svg';
-    } else if (screenWidth === 1440) {
-      contentNieta.src = '/src/assets/text/content-nieta.svg';
-    }
-  };
-
-  window.addEventListener('resize', handleResize);
-  handleResize();
-</script>
+<script></script>

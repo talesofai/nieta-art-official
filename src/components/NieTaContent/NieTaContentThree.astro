@@ -7,108 +7,35 @@ import UploadModal from './UploadModal.astro';
 ---
 
 <!-- assistant -->
-<div class="absolute top-[4px] left-[242px]" id="assistant">
-  <img
-    src={Assistant.src}
-    alt="Assistant"
-    width={Assistant.width}
-    height={Assistant.height}
-    decoding="async"
-    loading="lazy"
-  />
+<div class="absolute" id="assistantTrains">
+  <img src={Assistant.src} alt="Assistant" decoding="async" loading="lazy" />
 </div>
 
 <!-- lines -->
-<div class="absolute top-[40px] right-[242px]" id="line1">
-  <img
-    src={LineTopRight.src}
-    alt="LineTopRight"
-    width={LineTopRight.width}
-    height={LineTopRight.height}
-    decoding="async"
-    loading="lazy"
-  />
+<div class="absolute" id="line-3-top-right">
+  <img src={LineTopRight.src} alt="LineTopRight" decoding="async" loading="lazy" />
 </div>
 
 <!-- text -->
-<div class="absolute top-[148px] right-[242px]" id="text">
-  <img
-    src={TrainsContent.src}
-    alt="TrainsContent"
-    width={TrainsContent.width}
-    height={TrainsContent.height}
-    decoding="async"
-    loading="lazy"
-    class="trains"
-  />
+<div class="absolute" id="text-4">
+  <img src={TrainsContent.src} alt="TrainsContent" decoding="async" loading="lazy" class="trains" />
 </div>
 
 <!-- button -->
-<div class="absolute top-[300px] right-[519px]" id="button">
+<div class="absolute" id="button-upload">
   <UploadModal />
 </div>
 
 <!-- lines -->
-<div class="absolute bottom-[40px] right-[242px]" id="line2">
-  <img
-    src={LineBottomRight.src}
-    alt="LineBottomRight"
-    width={LineBottomRight.width}
-    height={LineBottomRight.height}
-    decoding="async"
-    loading="lazy"
-    class="bottomline"
-  />
+<div class="absolute" id="line-3-bottom-right">
+  <img src={LineBottomRight.src} alt="LineBottomRight" decoding="async" loading="lazy" />
 </div>
 
-<style>
-  @media (min-width: 1440px) and (max-width: 1919px) {
-    #assistant {
-      left: 96px;
-    }
-
-    #line1,
-    #line2,
-    #text {
-      right: 96px;
-    }
-
-    #button {
-      right: 373px;
-    }
-  }
-
-  @media (min-width: 744px) and (max-width: 1439px) {
-    #line1 {
-      right: 48px;
-    }
-
-    #line2 {
-      left: 48px;
-      bottom: 40px;
-    }
-    #button {
-      left: 245px;
-      right: 245px;
-      top: 303px;
-    }
-    #text {
-      top: 168px;
-      left: 106px;
-      right: 106px;
-    }
-    #assistant {
-      left: 65px;
-      right: 65px;
-      top: 431px;
-    }
-  }
-</style>
+<style></style>
 
 <script>
   const UploadModal = document.querySelector('#UploadModal') as HTMLImageElement;
-  const trainsNieta = document.querySelector('.trains') as HTMLImageElement;
-  const BottomLine = document.querySelector('.bottomline') as HTMLImageElement;
+
   UploadModal?.addEventListener('mouseenter', () => {
     UploadModal.src = 'src/assets/button/upload-active.svg';
   });
@@ -116,18 +43,4 @@ import UploadModal from './UploadModal.astro';
   UploadModal?.addEventListener('mouseleave', () => {
     UploadModal.src = 'src/assets/button/upload.svg';
   });
-
-  const handleResize = () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 744 && screenWidth < 1440) {
-      trainsNieta.src = '/src/assets/text/trains-744.svg';
-      BottomLine.src = '/src/assets/images/line4-744.svg';
-    } else if (screenWidth === 1440) {
-      trainsNieta.src = '/src/assets/text/trains.svg';
-      BottomLine.src = '/src/assets/images/line4.svg';
-    }
-  };
-
-  window.addEventListener('resize', handleResize);
-  handleResize();
 </script>
