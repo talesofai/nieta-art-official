@@ -193,6 +193,19 @@
   margin-left: 0.322581rem;
 }
 
+.barrage-1,
+.barrage-2 {
+  animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* nietacontentthree */
 #assistantTrains {
   bottom: 2.258065rem;
