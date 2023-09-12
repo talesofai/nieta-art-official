@@ -35,6 +35,10 @@
   height: 0.486111rem;
 }
 
+#line-1-bottom-left {
+  display: none;
+}
+
 #assistant {
   top: 0.631944rem;
   left: 0.666667rem;
@@ -97,6 +101,10 @@
   height: 0.118056rem;
 }
 
+#text-2 img:nth-child(2) {
+  display: none;
+}
+
 #text-2 {
   left: 0.666667rem;
   top: 2.638889rem;
@@ -138,6 +146,10 @@
 }
 
 /* nietacontenttwo */
+#text-3 img:nth-child(2) {
+  display: none;
+}
+
 #text-3 {
   top: 0.555556rem;
   left: 0.666667rem;
@@ -163,6 +175,7 @@
 .barrage-item:not(:first-child):not(:nth-child(6)) {
   margin-left: 0.166667rem;
 }
+
 /* nietacontentthree */
 #assistantTrains {
   top: 0.027778rem;
@@ -182,6 +195,10 @@
 #line-3-top-right img {
   width: 2.0625rem;
   height: 0.486111rem;
+}
+
+#text-4 img:nth-child(2) {
+  display: none;
 }
 
 #text-4 {
@@ -204,6 +221,10 @@
   height: 0.444444rem;
 }
 
+#line-3-bottom-right img:nth-child(2) {
+  display: none;
+}
+
 #line-3-bottom-right {
   right: 0.666667rem;
   bottom: 0.277778rem;
@@ -223,6 +244,10 @@
 #text-5 img {
   width: 0.5rem;
   height: 0.166667rem;
+}
+
+#copyright img:nth-child(2) {
+  display: none;
 }
 
 #copyright {
