@@ -1,0 +1,303 @@
+/* nietaheader */
+#logo {
+  top: 0.215054rem;
+  left: 0.645161rem;
+}
+
+#logo img:nth-child(1) {
+  width: 0.430108rem;
+  height: 0.430108rem;
+}
+
+#logo img:nth-child(2) {
+  width: 0.967742rem;
+  height: 0.322581rem;
+  margin-left: 0.107527rem;
+}
+
+#line-1-top-right {
+  top: 0.860215rem;
+  right: 0.645161rem;
+}
+
+#line-1-top-right img {
+  width: 4.354839rem;
+  height: 1.465054rem;
+}
+
+#line-1-bottom-right {
+  display: none;
+}
+
+#line-1-bottom-left {
+  bottom: 0.591398rem;
+  left: 0.645161rem;
+}
+
+#line-1-bottom-left img {
+  width: 3.991935rem;
+  height: 0.94086rem;
+}
+
+#assistant {
+  top: 1.075269rem;
+  left: 1.08871rem;
+  right: 1.08871rem;
+}
+
+#assistant img {
+  width: 7.822581rem;
+  height: 8.494624rem;
+}
+
+#text {
+  bottom: 3.13172rem;
+  left: 2.043011rem;
+  right: 2.043011rem;
+}
+
+#text img {
+  width: 5.900538rem;
+  height: 2.419355rem;
+}
+
+#buttons {
+  bottom: 1.841398rem;
+  left: 1.680108rem;
+  right: 1.680108rem;
+}
+
+#JoinCommunity,
+#StartNieTa {
+  width: 3.413978rem;
+  height: 0.860215rem;
+}
+
+#bottom-nieta {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#bottom-nieta img {
+  width: 10rem;
+  height: 3.185484rem;
+}
+
+/* nietacontentone */
+#createStories {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#createStories img {
+  width: 10rem;
+  height: 1.209677rem;
+}
+
+#line-2-top-right {
+  right: 0.645161rem;
+  top: 0.537634rem;
+}
+
+#line-2-top-right img {
+  width: 3.534946rem;
+  height: 0.228495rem;
+}
+
+#text-2 img:nth-child(1) {
+  display: none;
+}
+
+#text-2 img:nth-child(2) {
+  display: block;
+}
+
+#text-2 {
+  top: 2.204301rem;
+  left: 1.653226rem;
+  right: 1.653226rem;
+}
+
+#text-2 img {
+  width: 6.693548rem;
+  height: 3.333333rem;
+}
+
+#assistantNieTa {
+  bottom: 2.204301rem;
+  left: 1.370968rem;
+  right: 1.370968rem;
+}
+
+#assistantNieTa img {
+  width: 7.258065rem;
+  height: 7.150538rem;
+}
+
+#line-2-bottom-left {
+  bottom: 0.537634rem;
+  left: 0.698925rem;
+}
+
+#line-2-bottom-left img {
+  width: 3.642473rem;
+  height: 1.102151rem;
+}
+
+#together {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#together img {
+  width: 10rem;
+  height: 1.88172rem;
+}
+
+/* nietacontenttwo */
+#text-3 img:nth-child(1) {
+  display: none;
+}
+
+#text-3 img:nth-child(2) {
+  display: block;
+}
+
+#text-3 {
+  top: 1.075269rem;
+  left: 1.102151rem;
+  right: 1.102151rem;
+}
+
+#text-3 img {
+  width: 7.782258rem;
+  height: 2.473118rem;
+}
+
+#barrage-container {
+  left: 0;
+  right: 0;
+  bottom: 1.075269rem;
+  width: 14.395161rem;
+  height: 2.043011rem;
+}
+
+.barrage-2 {
+  margin-top: 0.537634rem;
+}
+
+.barrage-item:not(:first-child):not(:nth-child(6)) {
+  margin-left: 0.322581rem;
+}
+
+.barrage-1,
+.barrage-2 {
+  animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* nietacontentthree */
+#assistantTrains {
+  bottom: 2.258065rem;
+  left: 0.873656rem;
+  right: 0.873656rem;
+}
+
+#assistantTrains img {
+  width: 8.252688rem;
+  height: 6.545699rem;
+}
+
+#line-3-top-right {
+  top: 0.537634rem;
+  right: 0.645161rem;
+}
+
+#line-3-top-right img {
+  width: 3.991935rem;
+  height: 0.94086rem;
+}
+
+#text-4 img:nth-child(1) {
+  display: none;
+}
+
+#text-4 img:nth-child(2) {
+  display: block;
+}
+
+#text-4 {
+  top: 2.258065rem;
+  left: 1.438172rem;
+  right: 1.438172rem;
+}
+
+#text-4 img {
+  width: 7.137097rem;
+  height: 1.397849rem;
+}
+
+#button-upload {
+  left: 3.293011rem;
+  right: 3.293011rem;
+  top: 4.072581rem;
+}
+
+#UploadModal {
+  width: 3.413978rem;
+  height: 0.860215rem;
+}
+
+#line-3-bottom-right img:nth-child(1) {
+  display: none;
+}
+
+#line-3-bottom-right img:nth-child(2) {
+  display: block;
+}
+
+#line-3-bottom-right {
+  left: 0.645161rem;
+  bottom: 0.537634rem;
+}
+
+#line-3-bottom-right img {
+  width: 2.069892rem;
+  height: 0.443548rem;
+}
+/* nietafooter */
+#text-5 {
+  top: 0.215054rem;
+  bottom: 0.215054rem;
+  left: 0.524194rem;
+}
+
+#text-5 img {
+  width: 0.645161rem;
+  height: 0.215054rem;
+}
+
+#copyright img:nth-child(2) {
+  display: none;
+}
+
+#copyright {
+  right: 0.645161rem;
+  top: 0.215054rem;
+  bottom: 0.215054rem;
+}
+
+#copyright img {
+  width: 7.715054rem;
+  height: 0.228495rem;
+}
