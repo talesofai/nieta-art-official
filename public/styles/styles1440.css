@@ -164,8 +164,9 @@
   left: 0.666667rem;
   right: 0.666667rem;
   bottom: 0.555556rem;
-  width: 8.319444rem;
+  width: 100%;
   height: 1.166667rem;
+  overflow: hidden;
 }
 
 .barrage-2 {
