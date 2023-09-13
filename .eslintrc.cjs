@@ -5,6 +5,7 @@ module.exports = {
         map: [
           ['@components', './src/components'],
           ['@assets', './src/assets'],
+          ['@styles', './src/styles'],
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.astro'],
       },

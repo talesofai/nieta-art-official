@@ -60,21 +60,25 @@ import BottomLeftLine from '@assets/images/line6.svg';
 <style></style>
 
 <script>
+  import joinCommunityActive from '@assets/button/join-community-active.svg';
+  import JoinCommunityNormal from '@assets/button/join-community.svg';
+  import startNietaActive from '@assets/button/start-nieta-active.svg';
+  import startNietaNormal from '@assets/button/start-nieta.svg';
   const startNietTa = document.querySelector('#StartNieTa') as HTMLImageElement;
   const joinCommunity = document.querySelector('#JoinCommunity') as HTMLImageElement;
   joinCommunity?.addEventListener('mouseenter', () => {
-    joinCommunity.src = 'src/assets/button/join-community-active.svg';
+    joinCommunity.src = joinCommunityActive.src;
   });
 
   joinCommunity?.addEventListener('mouseleave', () => {
-    joinCommunity.src = 'src/assets/button/join-community.svg';
+    joinCommunity.src = JoinCommunityNormal.src;
   });
 
   startNietTa?.addEventListener('mouseenter', () => {
-    startNietTa.src = 'src/assets/button/start-nieta-active.svg';
+    startNietTa.src = startNietaActive.src;
   });
 
   startNietTa?.addEventListener('mouseleave', () => {
-    startNietTa.src = 'src/assets/button/start-nieta.svg';
+    startNietTa.src = startNietaNormal.src;
   });
 </script>

@@ -38,13 +38,15 @@ import LineBottomLeft744 from '@assets/images/line7.svg';
 <style></style>
 
 <script>
+  import UploadModalActive from '@assets/button/upload-active.svg';
+  import UploadModalNormal from '@assets/button/upload.svg';
   const UploadModal = document.querySelector('#UploadModal') as HTMLImageElement;
 
   UploadModal?.addEventListener('mouseenter', () => {
-    UploadModal.src = 'src/assets/button/upload-active.svg';
+    UploadModal.src = UploadModalActive.src;
   });
 
   UploadModal?.addEventListener('mouseleave', () => {
-    UploadModal.src = 'src/assets/button/upload.svg';
+    UploadModal.src = UploadModalNormal.src;
   });
 </script>
