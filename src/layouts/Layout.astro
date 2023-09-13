@@ -38,7 +38,7 @@ const { title } = Astro.props;
       href={import.meta.env.BASE_URL + '/styles/styles1920.css'}
       media="screen and (min-width: 1920px)"
     />
-    <script src="/js/index.js" is:inline></script>
+    <script src={import.meta.env.BASE_URL + '/js/index.js'} is:inline></script>
   </head>
   <body>
     <slot />
