@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'static',
   build: {
-    assets: 'static',
+    assets: 'assets',
     assetsPrefix: 'https://oss.talesofai.cn/static/official/',
   },
   vite: {

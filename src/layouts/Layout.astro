@@ -18,21 +18,17 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="stylesheet" href="/styles/styles375.css" media="screen and (max-width: 744px)" />
-    <link rel="stylesheet" href="/styles/styles744.css" media="screen and (min-width: 744px) and (max-width: 1440px)" />
-    <link
-      rel="stylesheet"
-      href="/styles/styles1440.css"
-      media="screen and (min-width: 1440px) and (max-width: 1920px)"
-    />
-    <link rel="stylesheet" href="/styles/styles1920.css" media="screen and (min-width: 1920px)" />
-    <script src="/js/index.js" is:inline></script>
   </head>
   <body>
     <slot />
   </body>
 </html>
-<style is:global>
+<style is:global lang="scss">
+  @use 'src/styles/_styles375' as *;
+  @use 'src/styles/_styles744' as *;
+  @use 'src/styles/_styles1440' as *;
+  @use 'src/styles/_styles1920' as *;
+
   * {
     margin: 0;
     padding: 0;
@@ -42,26 +38,76 @@ const { title } = Astro.props;
     display: grid;
     height: 100vh;
   }
+
   @media screen and (min-width: 1920px) {
+    @include layout-1920;
     body {
       grid-template-rows: 5.33rem 5.33rem 3rem 2.67rem 0.33rem;
     }
   }
 
   @media screen and (min-width: 1440px) and (max-width: 1920px) {
+    @include layout-1440;
     body {
       grid-template-rows: 7.11rem 7.11rem 4rem 3.56rem 0.44rem;
     }
   }
 
   @media (min-width: 744px) and (max-width: 1440px) {
+    @include layout-744;
     body {
       grid-template-rows: 15.22rem 15.22rem 7.53rem 13.94rem 0.65rem;
     }
   }
   @media screen and (max-width: 744px) {
+    @include layout-375;
     body {
       grid-template-rows: 21.65rem 21.65rem 11.84rem 17.79rem 2.8rem;
     }
   }
 </style>
+<script is:inline>
+  (function flexible(window, document) {
+    var docEl = document.documentElement;
+    var dpr = window.devicePixelRatio || 1;
+
+    // adjust body font size
+    function setBodyFontSize() {
+      if (document.body) {
+        document.body.style.fontSize = 12 * dpr + 'px';
+      } else {
+        document.addEventListener('DOMContentLoaded', setBodyFontSize);
+      }
+    }
+    setBodyFontSize();
+
+    // set 1rem = viewWidth / 10
+    function setRemUnit() {
+      var rem = docEl.clientWidth / 10;
+      docEl.style.fontSize = rem + 'px';
+    }
+
+    setRemUnit();
+
+    // reset rem unit on page resize
+    window.addEventListener('resize', setRemUnit);
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        setRemUnit();
+      }
+    });
+
+    // detect 0.5px supports
+    if (dpr >= 2) {
+      var fakeBody = document.createElement('body');
+      var testElement = document.createElement('div');
+      testElement.style.border = '.5px solid transparent';
+      fakeBody.appendChild(testElement);
+      docEl.appendChild(fakeBody);
+      if (testElement.offsetHeight === 1) {
+        docEl.classList.add('hairlines');
+      }
+      docEl.removeChild(fakeBody);
+    }
+  })(window, document);
+</script>

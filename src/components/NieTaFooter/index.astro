@@ -2,18 +2,19 @@
 import Text from '@assets/text/bottom-nieta-text.svg';
 import Copyright from '@assets/images/copyright.svg';
 import Copyright375 from '@assets/images/copyright-375.svg';
+import { Image } from 'astro:assets';
 ---
 
 <footer class="relative" style="background: #131B22;">
   <!-- text -->
   <div class="absolute" id="text-5">
-    <img src={Text.src} alt="Text" decoding="async" loading="lazy" />
+    <Image src={Text} alt="Text" decoding="async" loading="lazy" />
   </div>
 
   <!-- copyright -->
   <div class="absolute" id="copyright">
-    <img src={Copyright.src} alt="Copyright" decoding="async" loading="lazy" />
-    <img src={Copyright375.src} alt="Copyright375" decoding="async" loading="lazy" />
+    <Image src={Copyright} alt="Copyright" decoding="async" loading="lazy" />
+    <Image src={Copyright375} alt="Copyright375" decoding="async" loading="lazy" />
   </div>
 </footer>
 

@@ -6,12 +6,13 @@ import ContentNieTa from '@assets/text/content-nieta.svg';
 import ContentNieTa744 from '@assets/text/content-nieta-744.svg';
 import AssistantNieTa from '@assets/images/assistant-nieta.svg';
 import Together from '@assets/text/together.svg';
+import { Image } from 'astro:assets';
 ---
 
 <!-- createStories -->
 <div class="absolute" id="createStories">
-  <img
-    src={CreateStories.src}
+  <Image
+    src={CreateStories}
     alt="CreateStories"
     width={CreateStories.width}
     height={CreateStories.height}
@@ -22,24 +23,24 @@ import Together from '@assets/text/together.svg';
 
 <!-- lines -->
 <div class="absolute" id="line-2-top-right">
-  <img src={LineTopRight.src} alt="Line" decoding="async" loading="lazy" />
+  <Image src={LineTopRight} alt="Line" decoding="async" loading="lazy" />
 </div>
 
 <!-- text -->
 <div class="absolute" id="text-2">
-  <img src={ContentNieTa.src} alt="ContentNieTa" decoding="async" loading="lazy" />
-  <img src={ContentNieTa744.src} alt="ContentNieTa744" decoding="async" loading="lazy" />
+  <Image src={ContentNieTa} alt="ContentNieTa" decoding="async" loading="lazy" />
+  <Image src={ContentNieTa744} alt="ContentNieTa744" decoding="async" loading="lazy" />
 </div>
 
 <!-- assistantNieTa -->
 <div class="absolute" id="assistantNieTa">
-  <img src={AssistantNieTa.src} alt="AssistantNieTa" decoding="async" loading="lazy" />
+  <Image src={AssistantNieTa} alt="AssistantNieTa" decoding="async" loading="lazy" />
 </div>
 
 <!-- lines -->
 <div class="absolute" id="line-2-bottom-left">
-  <img
-    src={LineBottomLeft.src}
+  <Image
+    src={LineBottomLeft}
     alt="Line"
     width={LineBottomLeft.width}
     height={LineBottomLeft.height}
@@ -50,8 +51,8 @@ import Together from '@assets/text/together.svg';
 
 <!-- together -->
 <div class="absolute" id="together">
-  <img
-    src={Together.src}
+  <Image
+    src={Together}
     alt="Together"
     width={Together.width}
     height={Together.height}

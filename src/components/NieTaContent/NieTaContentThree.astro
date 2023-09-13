@@ -6,22 +6,23 @@ import TrainsContent from '@assets/text/trains.svg';
 import TrainsContent744 from '@assets/text/trains-744.svg';
 import UploadModal from './UploadModal.astro';
 import LineBottomLeft744 from '@assets/images/line7.svg';
+import { Image } from 'astro:assets';
 ---
 
 <!-- assistant -->
 <div class="absolute" id="assistantTrains">
-  <img src={Assistant.src} alt="Assistant" decoding="async" loading="lazy" />
+  <Image src={Assistant} alt="Assistant" decoding="async" loading="lazy" />
 </div>
 
 <!-- lines -->
 <div class="absolute" id="line-3-top-right">
-  <img src={LineTopRight.src} alt="LineTopRight" decoding="async" loading="lazy" />
+  <Image src={LineTopRight} alt="LineTopRight" decoding="async" loading="lazy" />
 </div>
 
 <!-- text -->
 <div class="absolute" id="text-4">
-  <img src={TrainsContent.src} alt="TrainsContent" decoding="async" loading="lazy" class="trains" />
-  <img src={TrainsContent744.src} alt="TrainsContent744" decoding="async" loading="lazy" class="trains" />
+  <Image src={TrainsContent} alt="TrainsContent" decoding="async" loading="lazy" class="trains" />
+  <Image src={TrainsContent744} alt="TrainsContent744" decoding="async" loading="lazy" class="trains" />
 </div>
 
 <!-- button -->
@@ -31,8 +32,8 @@ import LineBottomLeft744 from '@assets/images/line7.svg';
 
 <!-- lines -->
 <div class="absolute" id="line-3-bottom-right">
-  <img src={LineBottomRight.src} alt="LineBottomRight" decoding="async" loading="lazy" />
-  <img src={LineBottomLeft744.src} alt="LineBottomLeft744" decoding="async" loading="lazy" />
+  <Image src={LineBottomRight} alt="LineBottomRight" decoding="async" loading="lazy" />
+  <Image src={LineBottomLeft744} alt="LineBottomLeft744" decoding="async" loading="lazy" />
 </div>
 
 <style></style>

@@ -1,0 +1,265 @@
+@mixin layout-1440 {
+  /* nietaheader */
+  #logo {
+    top: 0.111111rem;
+    left: 0.666667rem;
+  }
+
+  #logo img:nth-child(1) {
+    width: 0.222222rem;
+    height: 0.222222rem;
+  }
+
+  #logo img:nth-child(2) {
+    width: 0.5rem;
+    height: 0.166667rem;
+    margin-left: 0.055556rem;
+  }
+
+  #line-1-top-right {
+    top: 0.555556rem;
+    right: 0.666667rem;
+  }
+
+  #line-1-top-right img {
+    width: 2.666667rem;
+    height: 0.965278rem;
+  }
+
+  #line-1-bottom-right {
+    right: 0.666667rem;
+    bottom: 0.277778rem;
+  }
+
+  #line-1-bottom-right img {
+    width: 2.479167rem;
+    height: 0.486111rem;
+  }
+
+  #line-1-bottom-left {
+    display: none;
+  }
+
+  #assistant {
+    top: 0.631944rem;
+    left: 0.666667rem;
+  }
+
+  #assistant img {
+    width: 5.055556rem;
+    height: 5.847222rem;
+  }
+
+  #text {
+    top: 2.111111rem;
+    right: 0.861111rem;
+  }
+
+  #text img {
+    width: 3.048611rem;
+    height: 1.25rem;
+  }
+
+  #buttons {
+    top: 3.694444rem;
+    right: 0.666667rem;
+    z-index: 99;
+  }
+
+  #JoinCommunity,
+  #StartNieTa {
+    width: 1.694444rem;
+    height: 0.444444rem;
+  }
+
+  #bottom-nieta {
+    bottom: 0;
+    right: 0;
+  }
+
+  #bottom-nieta img {
+    width: 5.944444rem;
+    height: 1.888889rem;
+  }
+
+  /* nietacontentone */
+  #createStories {
+    top: 0;
+    left: 0;
+  }
+
+  #createStories img {
+    width: 8.395833rem;
+    height: 1.020833rem;
+  }
+
+  #line-2-top-right {
+    right: 0.666667rem;
+    top: 0.277778rem;
+  }
+
+  #line-2-top-right img {
+    width: 2.104167rem;
+    height: 0.118056rem;
+  }
+
+  #text-2 img:nth-child(2) {
+    display: none;
+  }
+
+  #text-2 {
+    left: 0.666667rem;
+    top: 2.638889rem;
+  }
+
+  #text-2 img {
+    width: 3.458333rem;
+    height: 1.833333rem;
+  }
+
+  #assistantNieTa {
+    top: 1.138889rem;
+    right: 0.666667rem;
+  }
+
+  #assistantNieTa img {
+    width: 4.6875rem;
+    height: 4.618056rem;
+  }
+
+  #line-2-bottom-left {
+    bottom: 0.277778rem;
+    left: 0.694444rem;
+  }
+
+  #line-2-bottom-left img {
+    width: 2.298611rem;
+    height: 0.569444rem;
+  }
+
+  #together {
+    bottom: 0;
+    right: 0;
+  }
+
+  #together img {
+    width: 6.520833rem;
+    height: 1.222222rem;
+  }
+
+  /* nietacontenttwo */
+  #text-3 img:nth-child(2) {
+    display: none;
+  }
+
+  #text-3 {
+    top: 0.555556rem;
+    left: 0.666667rem;
+  }
+
+  #text-3 img {
+    width: 6.333333rem;
+    height: 1.277778rem;
+  }
+
+  #barrage-container {
+    padding: 0 0.666667rem;
+    bottom: 0.555556rem;
+    width: 100%;
+    height: 1.166667rem;
+    overflow: hidden;
+  }
+
+  .barrage-2 {
+    margin-top: 0.277778rem;
+  }
+
+  .barrage-item:not(:first-child):not(:nth-child(6)) {
+    margin-left: 0.166667rem;
+  }
+
+  /* nietacontentthree */
+  #assistantTrains {
+    top: 0.027778rem;
+    left: 0.666667rem;
+  }
+
+  #assistantTrains img {
+    width: 4.263889rem;
+    height: 3.381944rem;
+  }
+
+  #line-3-top-right {
+    top: 0.277778rem;
+    right: 0.666667rem;
+  }
+
+  #line-3-top-right img {
+    width: 2.0625rem;
+    height: 0.486111rem;
+  }
+
+  #text-4 img:nth-child(2) {
+    display: none;
+  }
+
+  #text-4 {
+    top: 1.027778rem;
+    right: 0.666667rem;
+  }
+
+  #text-4 img {
+    width: 3.6875rem;
+    height: 0.722222rem;
+  }
+
+  #button-upload {
+    right: 2.590278rem;
+    bottom: 1.027778rem;
+  }
+
+  #UploadModal {
+    width: 1.694444rem;
+    height: 0.444444rem;
+  }
+
+  #line-3-bottom-right img:nth-child(2) {
+    display: none;
+  }
+
+  #line-3-bottom-right {
+    right: 0.666667rem;
+    bottom: 0.277778rem;
+  }
+
+  #line-3-bottom-right img {
+    width: 1.069444rem;
+    height: 0.229167rem;
+  }
+  /* nietafooter */
+  #text-5 {
+    top: 0.138889rem;
+    bottom: 0.138889rem;
+    left: 0.666667rem;
+  }
+
+  #text-5 img {
+    width: 0.5rem;
+    height: 0.166667rem;
+  }
+
+  #copyright img:nth-child(2) {
+    display: none;
+  }
+
+  #copyright {
+    right: 0.666667rem;
+    top: 0.166667rem;
+    bottom: 0.166667rem;
+  }
+
+  #copyright img {
+    width: 3.986111rem;
+    height: 0.118056rem;
+  }
+}
