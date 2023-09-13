@@ -6,6 +6,7 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://talesofai.github.io/',
   integrations: [tailwind(), react()],
+  base: '/nieta-art',
   build: {
     assets: 'static',
   },
