@@ -5,6 +5,8 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://talesofai.github.io/',
-  base: './',
   integrations: [tailwind(), react()],
+  build: {
+    assets: 'static',
+  },
 });
