@@ -65,6 +65,7 @@
   bottom: 3.946667rem;
   left: 0.533333rem;
   right: 0.533333rem;
+  z-index: 99;
 }
 
 #JoinCommunity,
