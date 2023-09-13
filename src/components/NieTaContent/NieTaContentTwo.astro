@@ -1,22 +1,19 @@
 ---
 import NieTaContent from '@assets/text/content-nieta2.svg';
 import NieTaContent744 from '@assets/text/content-nieta2-744.svg';
+import item1 from '@assets/barrage/item1.svg';
+import item2 from '@assets/barrage/item2.svg';
+import item3 from '@assets/barrage/item3.svg';
+import item4 from '@assets/barrage/item4.svg';
+import item5 from '@assets/barrage/item5.svg';
+import item6 from '@assets/barrage/item6.svg';
+import item7 from '@assets/barrage/item7.svg';
+import item8 from '@assets/barrage/item8.svg';
+import item9 from '@assets/barrage/item9.svg';
+import item10 from '@assets/barrage/item10.svg';
+const BarrageList = [item1, item2, item3, item4, item5];
 
-const BarrageList = [
-  '/src/assets/barrage/item1.svg',
-  '/src/assets/barrage/item2.svg',
-  '/src/assets/barrage/item3.svg',
-  '/src/assets/barrage/item4.svg',
-  '/src/assets/barrage/item5.svg',
-];
-
-const BarrageList2 = [
-  '/src/assets/barrage/item6.svg',
-  '/src/assets/barrage/item7.svg',
-  '/src/assets/barrage/item8.svg',
-  '/src/assets/barrage/item9.svg',
-  '/src/assets/barrage/item10.svg',
-];
+const BarrageList2 = [item6, item7, item8, item9, item10];
 ---
 
 <!-- text -->
@@ -29,9 +26,9 @@ const BarrageList2 = [
   <!-- barrage -->
   <div class="flex barrage-1">
     {
-      BarrageList.map((src: string) => (
+      BarrageList.map((item) => (
         <div class="barrage-item">
-          <img src={src} alt="barrage" decoding="async" loading="lazy" />
+          <img src={item.src} alt="barrage" decoding="async" loading="lazy" />
         </div>
       ))
     }
@@ -40,16 +37,14 @@ const BarrageList2 = [
   <!-- barrage -->
   <div class="flex barrage-2">
     {
-      BarrageList2.map((src: string) => (
+      BarrageList2.map((item) => (
         <div class="barrage-item">
-          <img src={src} alt="barrage" decoding="async" loading="lazy" />
+          <img src={item.src} alt="barrage" decoding="async" loading="lazy" />
         </div>
       ))
     }
   </div>
 </div>
-<style>
-
-</style>
+<style></style>
 
 <script></script>
