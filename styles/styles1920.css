@@ -62,6 +62,7 @@
 #buttons {
   top: 2.770833rem;
   right: 1.260417rem;
+  z-index: 99;
 }
 
 #JoinCommunity,
