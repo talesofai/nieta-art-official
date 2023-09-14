@@ -1,14 +1,15 @@
 ---
-import Logo from '@assets/images/logo.png';
+import Logo from '@assets/images/logo.svg';
 import NieTaText from '@assets/text/nieta.svg';
 import TopRightLine from '@assets/images/line.svg';
-import Assistant from '@assets/images/assistant.svg';
+import Assistant from '@assets/images/assistant.png';
 import TextContent from '@assets/text/text.svg';
 import NieTaBottomText from '@assets/text/bottom-nieta.svg';
 import JoinCommunityButton from './JoinCommunityButton.astro';
 import StartNieTaButton from './StartNieTaButton.astro';
 import BottomRightLine from '@assets/images/line5.svg';
 import BottomLeftLine from '@assets/images/line6.svg';
+import { Image } from 'astro:assets';
 ---
 
 <header
@@ -17,23 +18,23 @@ import BottomLeftLine from '@assets/images/line6.svg';
 >
   {/* logo */}
   <div class="flex items-center absolute" id="logo">
-    <img src={Logo.src} alt="Logo" decoding="async" loading="lazy" />
-    <img src={NieTaText.src} alt="NieTa" decoding="async" loading="lazy" />
+    <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
+    <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
   </div>
 
   {/* lines */}
   <div class="absolute" id="line-1-top-right">
-    <img src={TopRightLine.src} alt="Line" decoding="async" loading="lazy" />
+    <Image src={TopRightLine} alt="Line" decoding="async" loading="lazy" />
   </div>
 
   {/* assistant */}
   <div class="absolute" id="assistant">
-    <img src={Assistant.src} decoding="async" loading="lazy" alt="assistant" />
+    <Image src={Assistant} decoding="async" loading="lazy" alt="assistant" />
   </div>
 
   {/* text content */}
   <div class="absolute" id="text">
-    <img src={TextContent.src} alt="text" decoding="async" loading="lazy" />
+    <Image src={TextContent} alt="text" decoding="async" loading="lazy" />
   </div>
 
   {/* two buttons */}
@@ -44,16 +45,16 @@ import BottomLeftLine from '@assets/images/line6.svg';
 
   {/* nieta text */}
   <div class="absolute" id="bottom-nieta">
-    <img src={NieTaBottomText.src} alt="NieTaBottomText" decoding="async" loading="lazy" class="bottom-nieta" />
+    <Image src={NieTaBottomText} alt="NieTaBottomText" decoding="async" loading="lazy" class="bottom-nieta" />
   </div>
 
   <!-- lines -->
   <div class="absolute" id="line-1-bottom-right">
-    <img src={BottomRightLine.src} alt="bottomaddline" class="bottomaddline" />
+    <Image src={BottomRightLine} alt="bottomaddline" class="bottomaddline" />
   </div>
 
   <div class="absolute" id="line-1-bottom-left">
-    <img src={BottomLeftLine.src} alt="BottomLeftLine" />
+    <Image src={BottomLeftLine} alt="BottomLeftLine" />
   </div>
 </header>
 

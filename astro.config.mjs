@@ -4,10 +4,33 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://talesofai.github.io',
-  base: './nieta-art',
+  site: 'https://official.talesofai.cn/',
   integrations: [tailwind(), react()],
+  output: 'static',
   build: {
-    assets: 'static',
+    assets: 'assets',
+    assetsPrefix: 'https://oss.talesofai.cn/static/official/',
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: 'entry.[hash].js',
+          chunkFileNames: 'chunks/chunk.[hash].js',
+          assetFileNames: 'assets/asset.[hash][extname]',
+        },
+      },
+    },
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: 'entry.[hash].js',
+          chunkFileNames: 'chunks/chunk.[hash].js',
+          assetFileNames: 'assets/asset.[hash][extname]',
+        },
+      },
+    },
   },
 });

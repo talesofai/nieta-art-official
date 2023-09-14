@@ -11,6 +11,7 @@ import item7 from '@assets/barrage/item7.svg';
 import item8 from '@assets/barrage/item8.svg';
 import item9 from '@assets/barrage/item9.svg';
 import item10 from '@assets/barrage/item10.svg';
+import { Image } from 'astro:assets';
 const BarrageList = [item1, item2, item3, item4, item5];
 
 const BarrageList2 = [item6, item7, item8, item9, item10];
@@ -18,8 +19,8 @@ const BarrageList2 = [item6, item7, item8, item9, item10];
 
 <!-- text -->
 <div class="absolute" id="text-3">
-  <img src={NieTaContent.src} alt="NieTaContent" decoding="async" loading="lazy" class="text2" />
-  <img src={NieTaContent744.src} alt="NieTaContent744" decoding="async" loading="lazy" class="text2" />
+  <Image src={NieTaContent} alt="NieTaContent" decoding="async" loading="lazy" class="text2" />
+  <Image src={NieTaContent744} alt="NieTaContent744" decoding="async" loading="lazy" class="text2" />
 </div>
 
 <div class="absolute" id="barrage-container">
@@ -28,7 +29,7 @@ const BarrageList2 = [item6, item7, item8, item9, item10];
     {
       BarrageList.map((item) => (
         <div class="barrage-item">
-          <img src={item.src} alt="barrage" decoding="async" loading="lazy" />
+          <Image src={item} alt="barrage" decoding="async" loading="lazy" />
         </div>
       ))
     }
@@ -39,7 +40,7 @@ const BarrageList2 = [item6, item7, item8, item9, item10];
     {
       BarrageList2.map((item) => (
         <div class="barrage-item">
-          <img src={item.src} alt="barrage" decoding="async" loading="lazy" />
+          <Image src={item} alt="barrage" decoding="async" loading="lazy" />
         </div>
       ))
     }
