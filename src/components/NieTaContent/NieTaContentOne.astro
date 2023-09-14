@@ -61,6 +61,80 @@ import { Image } from 'astro:assets';
   />
 </div>
 
-<style></style>
+<style>
+  #together {
+    animation: slideInLeft 2s ease-in-out;
+    animation-delay: 0.5s;
+  }
 
-<script></script>
+  #createStories {
+    animation: slideInRight 2s ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  #line-2-top-right {
+    animation: slideInLeft 0.5s ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  #line-2-bottom-left {
+    animation: slideInRight 0.5s ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  #assistantNieTa {
+    animation: blindsIn 1s ease-in-out;
+    animation-delay: 0.5s;
+  }
+  #text-2 {
+    animation: fadeIn 2s ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blindsIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  console.log('1');
+</script>

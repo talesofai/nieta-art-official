@@ -3,7 +3,7 @@ name: talesofai-official-ci
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   check-artifact:

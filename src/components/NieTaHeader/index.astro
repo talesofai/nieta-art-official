@@ -15,6 +15,7 @@ import { Image } from 'astro:assets';
 <header
   class="relative"
   style="background: linear-gradient(156deg, #151a31 0%, #191e37 14.73%, #12172c 35.15%, #0d1317 76.29%);"
+  id="nieta-header"
 >
   {/* logo */}
   <div class="flex items-center absolute" id="logo">
@@ -58,7 +59,61 @@ import { Image } from 'astro:assets';
   </div>
 </header>
 
-<style></style>
+<style>
+  /* 线条从右向左渐变出现 */
+
+  #line-1-top-right,
+  #line-1-bottom-right,
+  #text,
+  #buttons {
+    animation: slideInLeft 0.5s ease-in-out;
+  }
+
+  /* logo直接出现 */
+  #logo {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  /* assistant以百叶窗方式出现 */
+  #assistant {
+    animation: blindsIn 0.5s ease-in-out;
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blindsIn {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    50% {
+      height: 100%;
+      opacity: 0.5;
+    }
+    100% {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+</style>
 
 <script>
   import joinCommunityActive from '@assets/button/join-community-active.svg';

@@ -1,0 +1,144 @@
+---
+
+---
+
+<div class="w-full h-full absolute" id="animation-box">
+  <div id="loader"></div>
+  <div id="progress-bar">
+    <div id="percentage">0%</div>
+  </div>
+  <div id="bottom-progress-bar"></div>
+  <div id="loading-text">Welcome to Nieta...</div>
+</div>
+
+<style>
+  #loader {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+  }
+
+  #progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #1136f1;
+    transition: height 0.5s;
+    display: flex; /* 添加弹性布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+  }
+
+  @keyframes progressBarAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  #bottom-progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 8px;
+    width: 0%;
+    background-color: #1136f1;
+    transition: width 0.5s;
+  }
+
+  #percentage {
+    position: fixed;
+
+    color: #1136f1;
+    text-align: center;
+    font-family: JiangChengLvDongHei;
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  @media screen and (min-width: 1920px) {
+    #percentage {
+      top: 0.25rem;
+      left: 0.333333rem;
+      font-size: 0.444444rem;
+    }
+    #loading-text {
+      bottom: 0.25rem;
+      right: 0.333333rem;
+      font-size: 0.333333rem;
+    }
+  }
+
+  @media screen and (min-width: 1440px) and (max-width: 1919px) {
+    #percentage {
+      top: 0.333333rem;
+      left: 0.444444rem;
+      font-size: 0.625rem;
+    }
+    #loading-text {
+      bottom: 0.333333rem;
+      right: 0.444444rem;
+      font-size: 0.444444rem;
+    }
+  }
+
+  @media (min-width: 744px) and (max-width: 1439px) {
+    #percentage {
+      top: 0.645161rem;
+      left: 0.860215rem;
+      font-size: 0.833333rem;
+    }
+    #loading-text {
+      bottom: 0.645161rem;
+      right: 0.860215rem;
+      font-size: 0.860215rem;
+    }
+  }
+  @media screen and (max-width: 744px) {
+    #percentage {
+      top: 1.28rem;
+      left: 1.706667rem;
+      font-size: 1.2rem;
+    }
+    #loading-text {
+      bottom: 1.28rem;
+      right: 1.706667rem;
+      font-size: 0.706667rem;
+    }
+  }
+
+  #percentage.transition {
+    transition: color 0.5s;
+  }
+
+  #loading-text {
+    position: fixed;
+    font-family: Roboto Condensed;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    opacity: 0;
+    color: #fff;
+    transition: opacity 0.5s; /* 添加透明度过渡 */
+  }
+
+  @keyframes loadingTextAnimation {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+</style>

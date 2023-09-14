@@ -36,7 +36,31 @@ import { Image } from 'astro:assets';
   <Image src={LineBottomLeft744} alt="LineBottomLeft744" decoding="async" loading="lazy" />
 </div>
 
-<style></style>
+<style>
+  #line-3-top-right,
+  #line-3-bottom-right {
+    animation: fadeIn 3s ease-in-out;
+    animation-delay: 0.2s;
+  }
+
+  #assistantTrains {
+    animation: fadeIn 2s ease-in-out;
+    animation-delay: 0.2s;
+  }
+
+  #text-4 {
+    animation: fadeIn 5s ease-in-out;
+    animation-delay: 0.2s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
 
 <script>
   import UploadModalActive from '@assets/button/upload-active.svg';
