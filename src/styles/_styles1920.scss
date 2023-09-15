@@ -322,18 +322,29 @@
     height: 0.125rem;
   }
 
-  #copyright img:nth-child(2) {
-    display: none;
-  }
-
-  #copyright {
-    right: 242px;
-    top: 0.125rem;
-    bottom: 0.125rem;
-  }
-
-  #copyright img {
-    width: 2.989583rem;
+  #email {
+    top: 0.104167rem;
+    bottom: 0.104167rem;
+    left: 5.75rem;
+    width: 0.598958rem;
     height: 0.088542rem;
+    color: #fff;
+    font-size: 0.0625rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  #address {
+    top: 0.104167rem;
+    bottom: 0.104167rem;
+    left: 6.473958rem;
+    width: 2.276042rem;
+    height: 0.088542rem;
+    color: #fff;
+    font-size: 0.0625rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
   }
 }

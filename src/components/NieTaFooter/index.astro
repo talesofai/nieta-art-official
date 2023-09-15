@@ -1,7 +1,5 @@
 ---
 import Text from '@assets/text/bottom-nieta-text.svg';
-import Copyright from '@assets/images/copyright.svg';
-import Copyright375 from '@assets/images/copyright-375.svg';
 import { Image } from 'astro:assets';
 ---
 
@@ -12,9 +10,18 @@ import { Image } from 'astro:assets';
   </div>
 
   <!-- copyright -->
-  <div class="absolute" id="copyright">
+  <!-- <div class="absolute" id="copyright">
     <Image src={Copyright} alt="Copyright" decoding="async" loading="lazy" />
     <Image src={Copyright375} alt="Copyright375" decoding="async" loading="lazy" />
+  </div> -->
+
+  <!-- email -->
+  <div class="absolute" id="email">
+    <span>邮箱：1232@qq.com</span>
+  </div>
+
+  <div class="absolute" id="address">
+    <span>Copyright © 看见概念（上海）智能科技有限公司 2023 沪ICP备2023001339号-1</span>
   </div>
 </footer>
 

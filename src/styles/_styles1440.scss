@@ -284,7 +284,7 @@
 
   #text-4-t {
     top: 2.215278rem;
-    right: 0.666667rem;
+    left: 5.645833rem;
     width: 3.6875rem;
     height: 0.277778rem;
     color: #fff;
@@ -329,18 +329,29 @@
     height: 0.166667rem;
   }
 
-  #copyright img:nth-child(2) {
-    display: none;
-  }
-
-  #copyright {
-    right: 0.666667rem;
-    top: 0.166667rem;
-    bottom: 0.166667rem;
-  }
-
-  #copyright img {
-    width: 3.986111rem;
+  #email {
+    top: 0.138889rem;
+    bottom: 0.138889rem;
+    left: 5.354167rem;
+    width: 0.798611rem;
     height: 0.118056rem;
+    color: #fff;
+    font-size: 0.083333rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  #address {
+    top: 0.138889rem;
+    bottom: 0.138889rem;
+    left: 6.319444rem;
+    width: 3.034722rem;
+    height: 0.228495rem;
+    color: #fff;
+    font-size: 0.083333rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
   }
 }
