@@ -72,6 +72,43 @@
     height: 0.333333rem;
   }
 
+  #qr-code-framework-1 {
+    display: none;
+    right: 1.354167rem; // 260px
+    top: 3.3125rem;
+  }
+
+  #qr-code-framework-2 {
+    display: none;
+    right: 2.708333rem; // 520px
+    top: 3.3125rem;
+  }
+
+  #qr-code-framework-1 img,
+  #qr-code-framework-2 img {
+    width: 1.15625rem;
+    height: 1.15625rem;
+  }
+
+  #qr-code-1 {
+    display: none;
+    right: 1.458333rem;
+    top: 3.416667rem;
+  }
+
+  #qr-code-2 {
+    display: none;
+    right: 2.8125rem;
+    top: 3.416667rem;
+  }
+
+  #qr-code-1 img,
+  #qr-code-2 img {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+  }
+
   #bottom-nieta {
     bottom: 0;
     right: 1.260417rem;

@@ -9,6 +9,10 @@ import JoinCommunityButton from './JoinCommunityButton.astro';
 import StartNieTaButton from './StartNieTaButton.astro';
 import BottomRightLine from '@assets/images/line5.svg';
 import BottomLeftLine from '@assets/images/line6.svg';
+import StartNietaQrCodeFrameWork from '@assets/qrcode/qrcode-framework-1.svg';
+import JoinCommunityQrCodeFrameWork from '@assets/qrcode/qrcode-framework-2.svg';
+import StartNietaQrCode from '@assets/qrcode/start-nieta-qrcode.png';
+import JoinCommunityQrCode from '@assets/qrcode/join-nieta-qrcode.png';
 import { Image } from 'astro:assets';
 ---
 
@@ -18,7 +22,7 @@ import { Image } from 'astro:assets';
   id="nieta-header"
 >
   {/* logo */}
-  <div class="flex items-center absolute" id="logo">
+  <div class="flex items-center fixed" id="logo" style="z-index: 9999">
     <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
     <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
   </div>
@@ -42,6 +46,23 @@ import { Image } from 'astro:assets';
   <div class="flex absolute" id="buttons">
     <JoinCommunityButton />
     <StartNieTaButton />
+  </div>
+
+  <!-- two qr code hover -->
+  <div class="absolute" id="qr-code-framework-1">
+    <Image src={StartNietaQrCodeFrameWork} alt="StartNietaQrCodeFrameWork" />
+  </div>
+
+  <div class="absolute" id="qr-code-framework-2">
+    <Image src={JoinCommunityQrCodeFrameWork} alt="JoinCommunityQrCodeFrameWork" />
+  </div>
+
+  <div class="absolute" id="qr-code-1">
+    <Image src={StartNietaQrCode} alt="StartNietaQrCode" />
+  </div>
+
+  <div class="absolute" id="qr-code-2">
+    <Image src={JoinCommunityQrCode} alt="JoinCommunityQrCode" />
   </div>
 
   {/* nieta text */}
@@ -122,19 +143,31 @@ import { Image } from 'astro:assets';
   import startNietaNormal from '@assets/button/start-nieta.svg';
   const startNietTa = document.querySelector('#StartNieTa') as HTMLImageElement;
   const joinCommunity = document.querySelector('#JoinCommunity') as HTMLImageElement;
+  const startNieTaFrameWork = document.querySelector('#qr-code-framework-1') as HTMLDivElement;
+  const startNieTaQrCode = document.querySelector('#qr-code-1') as HTMLImageElement;
+  const joinCommunityFrameWork = document.querySelector('#qr-code-framework-2') as HTMLDivElement;
+  const joinCommunityQrCode = document.querySelector('#qr-code-2') as HTMLImageElement;
   joinCommunity?.addEventListener('mouseenter', () => {
     joinCommunity.src = joinCommunityActive.src;
+    joinCommunityFrameWork.style.display = 'block';
+    joinCommunityQrCode.style.display = 'block';
   });
 
   joinCommunity?.addEventListener('mouseleave', () => {
     joinCommunity.src = JoinCommunityNormal.src;
+    joinCommunityFrameWork.style.display = 'none';
+    joinCommunityQrCode.style.display = 'none';
   });
 
   startNietTa?.addEventListener('mouseenter', () => {
     startNietTa.src = startNietaActive.src;
+    startNieTaFrameWork.style.display = 'block';
+    startNieTaQrCode.style.display = 'block';
   });
 
   startNietTa?.addEventListener('mouseleave', () => {
     startNietTa.src = startNietaNormal.src;
+    startNieTaFrameWork.style.display = 'none';
+    startNieTaQrCode.style.display = 'none';
   });
 </script>

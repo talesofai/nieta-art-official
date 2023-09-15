@@ -61,7 +61,6 @@
     width: 5.900538rem;
     height: 2.419355rem;
   }
-
   #buttons {
     bottom: 1.841398rem;
     left: 1.680108rem;
@@ -73,6 +72,43 @@
   #StartNieTa {
     width: 3.413978rem;
     height: 0.860215rem;
+  }
+
+  #qr-code-framework-1 {
+    display: none;
+    right: 1.612903rem; // 120px
+    top: 8.736559rem; // 650px
+  }
+
+  #qr-code-framework-2 {
+    display: none;
+    left: 1.612903rem; // 120px
+    top: 8.736559rem;
+  }
+
+  #qr-code-framework-1 img,
+  #qr-code-framework-2 img {
+    width: 2.983871rem;
+    height: 2.983871rem;
+  }
+
+  #qr-code-1 {
+    display: none;
+    right: 1.88172rem;
+    top: 9.005376rem;
+  }
+
+  #qr-code-2 {
+    display: none;
+    left: 1.88172rem;
+    top: 9.005376rem;
+  }
+
+  #qr-code-1 img,
+  #qr-code-2 img {
+    width: 2.419355rem;
+    height: 2.419355rem;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
   }
 
   #bottom-nieta {
