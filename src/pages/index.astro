@@ -7,12 +7,12 @@ import Animation from './animation.astro';
 ---
 
 <Layout title="捏Ta">
-  <!-- <Animation /> -->
-  <!-- <div class="hidden" id="main-content"> -->
-  <NietaHeader />
-  <NieTaContent />
-  <NieTaFooter />
-  <!-- </div> -->
+  <Animation />
+  <div class="hidden" id="main-content">
+    <NietaHeader />
+    <NieTaContent />
+    <NieTaFooter />
+  </div>
 </Layout>
 
 <style>
@@ -26,160 +26,167 @@ import Animation from './animation.astro';
   }
 </style>
 
-<script defer>
-import { loadLibPag } from '@utils/pag';
-loadLibPag();
-</script>
-
 <script>
-  // window.addEventListener('load', function () {
-  //   var loader = document.getElementById('loader')!;
-  //   var progressBar = document.getElementById('progress-bar')!;
-  //   var bottomProgressBar = document.getElementById('bottom-progress-bar')!;
-  //   var percentage = document.getElementById('percentage')!;
-  //   var loadingText = document.getElementById('loading-text')!;
-  //   var mainContent = document.getElementById('main-content')!;
-  //   var animationBox = this.document.getElementById('animation-box')!;
-  //   var nietaHeader = document.querySelector('#nieta-header')! as HTMLDivElement;
-  //   var nietaContent1 = document.querySelector('#nieta-content1')! as HTMLDivElement;
-  //   var nietaContent2 = document.querySelector('#nieta-content2')! as HTMLDivElement;
-  //   var nietaContent3 = document.querySelector('#nieta-content3')! as HTMLDivElement;
-  //   var nietaFooter = this.document.querySelector('#nieta-footer')! as HTMLDivElement;
-  //   var parent = mainContent.parentNode!;
-  //   var height = 0;
-  //   var width = 0;
-  //   var touchedPercentage = false;
-  //   animationBox.style.backgroundColor = '#000';
-  //   var bottomInterval = setInterval(loadBottomProgress, 24);
-  //   function loadBottomProgress() {
-  //     if (width >= 100) {
-  //       clearInterval(bottomInterval);
-  //       animateProgressBar();
-  //     } else {
-  //       width += 2;
-  //       bottomProgressBar.style.width = width + '%';
-  //       percentage.innerHTML = width + '%';
+  window.addEventListener('load', function () {
+    var loader = document.getElementById('loader')!;
+    var progressBar = document.getElementById('progress-bar')!;
+    var bottomProgressBar = document.getElementById('bottom-progress-bar')!;
+    var percentage = document.getElementById('percentage')!;
+    var loadingText = document.getElementById('loading-text')!;
+    var mainContent = document.getElementById('main-content')!;
+    var animationBox = this.document.getElementById('animation-box')!;
+    var nietaHeader = document.querySelector('#nieta-header')! as HTMLDivElement;
+    var nietaContent1 = document.querySelector('#nieta-content1')! as HTMLDivElement;
+    var nietaContent2 = document.querySelector('#nieta-content2')! as HTMLDivElement;
+    var nietaContent3 = document.querySelector('#nieta-content3')! as HTMLDivElement;
+    var nietaFooter = document.querySelector('#nieta-footer')! as HTMLDivElement;
+    var character1 = document.querySelector('#pag1')! as HTMLCanvasElement;
+    var character2 = document.querySelector('#pag2')! as HTMLCanvasElement;
+    var character3 = document.querySelector('#pag3')! as HTMLCanvasElement;
+    var image1 = document.querySelector('#headerAssistant') as HTMLImageElement;
+    var image2 = document.querySelector('#contentAssistant') as HTMLImageElement;
+    var image3 = document.querySelector('#trainsAssistant') as HTMLImageElement;
+    var parent = mainContent.parentNode!;
+    var height = 0;
+    var width = 0;
+    var touchedPercentage = false;
+    animationBox.style.backgroundColor = '#000';
+    var bottomInterval = setInterval(loadBottomProgress, 24);
+    function loadBottomProgress() {
+      if (width >= 100) {
+        clearInterval(bottomInterval);
+        animateProgressBar();
+      } else {
+        width += 2;
+        bottomProgressBar.style.width = width + '%';
+        percentage.innerHTML = width + '%';
 
-  //       if (width === 60 && !touchedPercentage) {
-  //         loadingText.style.opacity = '1';
-  //       }
-  //     }
-  //   }
+        if (width === 60 && !touchedPercentage) {
+          loadingText.style.opacity = '1';
+        }
+      }
+    }
 
-  //   function animateProgressBar() {
-  //     var interval = setInterval(frame, 2);
+    function animateProgressBar() {
+      var interval = setInterval(frame, 2);
 
-  //     function frame() {
-  //       if (height >= 100) {
-  //         clearInterval(interval);
-  //         loader.style.display = 'none';
-  //       } else {
-  //         height += 10;
-  //         progressBar.style.height = height + '%';
-  //         if (height === 20 && !touchedPercentage) {
-  //           loadingText.style.color = '#000';
-  //         }
-  //         if (height === 100 && !touchedPercentage) {
-  //           touchedPercentage = true;
-  //           percentage.classList.add('transition'); // 添加过渡类
-  //           percentage.style.color = '#FB7DF1';
+      function frame() {
+        if (height >= 100) {
+          clearInterval(interval);
+          loader.style.display = 'none';
+        } else {
+          height += 10;
+          progressBar.style.height = height + '%';
+          if (height === 20 && !touchedPercentage) {
+            loadingText.style.color = '#000';
+          }
+          if (height === 100 && !touchedPercentage) {
+            touchedPercentage = true;
+            percentage.classList.add('transition'); // 添加过渡类
+            percentage.style.color = '#FB7DF1';
 
-  //           setTimeout(() => {
-  //             animationBox.style.background =
-  //               'linear-gradient(156deg, #151a31 0%, #191e37 14.73%, #12172c 35.15%, #0d1317 76.29%)';
-  //             percentage.style.opacity = '0';
-  //             bottomProgressBar.style.display = 'none';
-  //             progressBar.style.animation = 'progressBarAnimation 1s ease-in-out forwards';
+            setTimeout(() => {
+              animationBox.style.background =
+                'linear-gradient(156deg, #151a31 0%, #191e37 14.73%, #12172c 35.15%, #0d1317 76.29%)';
+              percentage.style.opacity = '0';
+              bottomProgressBar.style.display = 'none';
+              progressBar.style.animation = 'progressBarAnimation 1s ease-in-out forwards';
 
-  //             // 启动 loading-text 向右滑动并逐渐消失的动画
-  //             nextHeaderAniamiton();
+              // 启动 loading-text 向右滑动并逐渐消失的动画
+              nextHeaderAniamiton();
 
-  //             loadingText.style.animation = 'loadingTextAnimation 1s ease-in-out forwards';
-  //           }, 1000); // 停留 1 秒钟
+              loadingText.style.animation = 'loadingTextAnimation 1s ease-in-out forwards';
+            }, 1000); // 停留 1 秒钟
 
-  //           function nextHeaderAniamiton() {
-  //             setTimeout(() => {
-  //               loader.remove();
-  //               progressBar.remove();
-  //               bottomProgressBar.remove();
-  //               percentage.remove();
-  //               loadingText.remove();
-  //               parent.insertBefore(mainContent.firstChild!, mainContent);
-  //               animationBox.style.background = '#0E1418';
-  //               setTimeout(() => {
-  //                 nextContentAnimation1();
-  //               }, 500);
-  //             }, 1000);
-  //           }
-  //           function nextContentAnimation1() {
-  //             setTimeout(() => {
-  //               loader.remove();
-  //               progressBar.remove();
-  //               bottomProgressBar.remove();
-  //               percentage.remove();
-  //               loadingText.remove();
-  //               nietaHeader.remove();
-  //               parent.insertBefore(mainContent.firstChild!, mainContent);
-  //               nietaContent1.style.animation = 'slideInBottom 1s ease-in-out forwards';
-  //               setTimeout(() => {
-  //                 nextContentAnimation2();
-  //               }, 500);
-  //             }, 2000);
-  //           }
-  //           function nextContentAnimation2() {
-  //             setTimeout(() => {
-  //               loader.remove();
-  //               progressBar.remove();
-  //               bottomProgressBar.remove();
-  //               percentage.remove();
-  //               loadingText.remove();
-  //               nietaHeader.remove();
-  //               nietaContent1.remove();
-  //               parent.insertBefore(nietaContent2, mainContent);
-  //               nietaContent2.style.animation = 'slideInBottom 1s ease-in-out forwards';
-  //               setTimeout(() => {
-  //                 nextContentAnimation3();
-  //               }, 500);
-  //             }, 2000);
-  //           }
-  //           function nextContentAnimation3() {
-  //             setTimeout(() => {
-  //               loader.remove();
-  //               progressBar.remove();
-  //               bottomProgressBar.remove();
-  //               percentage.remove();
-  //               loadingText.remove();
-  //               nietaHeader.remove();
-  //               nietaContent1.remove();
-  //               nietaContent2.remove();
-  //               parent.insertBefore(nietaContent3, mainContent);
-  //               nietaContent3.style.animation = 'slideInBottom 1s ease-in-out forwards';
-  //               setTimeout(() => {
-  //                 toHome();
-  //               }, 500);
-  //             }, 2000);
-  //           }
-  //           function toHome() {
-  //             setTimeout(() => {
-  //               loader.remove();
-  //               progressBar.remove();
-  //               bottomProgressBar.remove();
-  //               percentage.remove();
-  //               loadingText.remove();
-  //               nietaHeader.remove();
-  //               nietaContent1.remove();
-  //               nietaContent2.remove();
-  //               nietaContent3.remove();
-  //               parent.insertBefore(nietaHeader, mainContent);
-  //               parent.insertBefore(nietaContent1, mainContent);
-  //               parent.insertBefore(nietaContent2, mainContent);
-  //               parent.insertBefore(nietaContent3, mainContent);
-  //               parent.insertBefore(nietaFooter, mainContent);
-  //             }, 1500);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // });
+            function nextHeaderAniamiton() {
+              setTimeout(() => {
+                loader.remove();
+                progressBar.remove();
+                bottomProgressBar.remove();
+                percentage.remove();
+                loadingText.remove();
+                parent.insertBefore(mainContent.firstChild!, mainContent);
+                animationBox.style.background = '#0E1418';
+                setTimeout(() => {
+                  nextContentAnimation1();
+                }, 500);
+              }, 1000);
+            }
+            function nextContentAnimation1() {
+              setTimeout(() => {
+                loader.remove();
+                progressBar.remove();
+                bottomProgressBar.remove();
+                percentage.remove();
+                loadingText.remove();
+                nietaHeader.remove();
+                parent.insertBefore(mainContent.firstChild!, mainContent);
+                nietaContent1.style.animation = 'slideInBottom 1s ease-in-out forwards';
+                setTimeout(() => {
+                  nextContentAnimation2();
+                }, 500);
+              }, 2000);
+            }
+            function nextContentAnimation2() {
+              setTimeout(() => {
+                loader.remove();
+                progressBar.remove();
+                bottomProgressBar.remove();
+                percentage.remove();
+                loadingText.remove();
+                nietaHeader.remove();
+                nietaContent1.remove();
+                parent.insertBefore(nietaContent2, mainContent);
+                nietaContent2.style.animation = 'slideInBottom 1s ease-in-out forwards';
+                setTimeout(() => {
+                  nextContentAnimation3();
+                }, 500);
+              }, 2000);
+            }
+            function nextContentAnimation3() {
+              setTimeout(() => {
+                loader.remove();
+                progressBar.remove();
+                bottomProgressBar.remove();
+                percentage.remove();
+                loadingText.remove();
+                nietaHeader.remove();
+                nietaContent1.remove();
+                nietaContent2.remove();
+                parent.insertBefore(nietaContent3, mainContent);
+                nietaContent3.style.animation = 'slideInBottom 1s ease-in-out forwards';
+                setTimeout(() => {
+                  toHome();
+                }, 500);
+              }, 2000);
+            }
+            function toHome() {
+              setTimeout(() => {
+                loader.remove();
+                progressBar.remove();
+                bottomProgressBar.remove();
+                percentage.remove();
+                loadingText.remove();
+                nietaHeader.remove();
+                nietaContent1.remove();
+                nietaContent2.remove();
+                nietaContent3.remove();
+                character1.remove();
+                character2.remove();
+                character3.remove();
+                image1.style.display = 'block';
+                image2.style.display = 'block';
+                image3.style.display = 'block';
+                parent.insertBefore(nietaHeader, mainContent);
+                parent.insertBefore(nietaContent1, mainContent);
+                parent.insertBefore(nietaContent2, mainContent);
+                parent.insertBefore(nietaContent3, mainContent);
+                parent.insertBefore(nietaFooter, mainContent);
+              }, 1500);
+            }
+          }
+        }
+      }
+    }
+  });
 </script>

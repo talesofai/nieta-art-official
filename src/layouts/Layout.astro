@@ -1,24 +1,9 @@
 ---
-// import { PAGInit } from 'libpag';
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-// PAGInit().then((PAG) => {
-//   const url = './like.pag';
-//   fetch(url)
-//     .then((response) => response.blob())
-//     .then(async (blob) => {
-//       const file = new window.File([blob], url.replace(/(.*\/)*([^.]+)/i, '$2'));
-//       const pagFile = await PAG.PAGFile.load(file);
-//       (document.getElementById('pag') as HTMLCanvasElement).width = pagFile.width();
-//       (document.getElementById('pag') as HTMLCanvasElement).height = pagFile.height();
-//       const pagView = await PAG.PAGView.init(pagFile, '#pag');
-//       pagView?.setRepeatCount(0);
-//       await pagView?.play();
-//     });
-// });
 ---
 
 <!doctype html>
@@ -37,28 +22,41 @@ const { title } = Astro.props;
   <body>
     <slot />
   </body>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/libpag@latest/lib/libpag.min.js"></script> -->
-  <!-- <script>
-    window.onload = async () => {
-      const pagUrl = '../assets/pag/角色1_bmp.pag';
-      // Initialize pag webassembly module.
-      const PAG = await window.libpag.PAGInit();
-      console.log('PAG', PAG);
-      // Fetch pag file.
-      const buffer = await fetch(pagUrl).then((response) => response.arrayBuffer());
-      // Load the PAGFile from file.
-      const pagFile = await PAG.PAGFile.load(buffer);
-      // Set the width from the PAGFile.
-      const canvas = document.getElementById('pag');
-      canvas.width = pagFile.width();
-      canvas.height = pagFile.height();
-      // Create PAGView.
-      const pagView = await PAG.PAGView.init(pagFile, canvas);
-      // Set PAGView play infinity.
-      pagView.setRepeatCount(0);
-      await pagView.play();
-    };
-  </script> -->
+  <script>
+    import { loadLibPag } from '@utils/pag';
+
+    const imageList = [
+      { id: 'headerAssistant', url: '/src/assets/pag/角色1_bmp.pag', canvasId: 'pag1' },
+      { id: 'contentAssistant', url: '/src/assets/pag/角色2_bmp.pag', canvasId: 'pag2' },
+      { id: 'trainsAssistant', url: '/src/assets/pag/角色4_bmp.pag', canvasId: 'pag3' },
+    ];
+
+    loadLibPag().then((PAG) => {
+      const loadImages = imageList.map(({ id, url, canvasId }) => {
+        return fetch(url)
+          .then((response) => response.arrayBuffer())
+          .then(async (buffer) => {
+            const character = document.getElementById(id);
+            character.style.display = 'none';
+            const pagFile = await PAG.PAGFile.load(buffer);
+            const canvas = document.getElementById(canvasId);
+            // canvas.width = pagFile.width();
+            // canvas.height = pagFile.height();
+            console.log(pagFile.width(), character.width);
+            const pagView = await PAG.PAGView.init(pagFile, canvas);
+            pagView.setRepeatCount(0);
+            await pagView.play();
+            return canvas;
+          });
+      });
+
+      Promise.all(loadImages).then((canvases) => {
+        // 在这里可以访问所有加载的图片的 canvas 对象
+        // 您可以根据需要将它们添加到 DOM 中或进行其他操作
+        console.log(canvases);
+      });
+    });
+  </script>
 </html>
 <style is:global lang="scss">
   @use 'src/styles/_styles375' as *;
