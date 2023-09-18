@@ -22,9 +22,11 @@ import { Image } from 'astro:assets';
   id="nieta-header"
 >
   {/* logo */}
-  <div class="flex items-center fixed" id="logo" style="z-index: 9999">
-    <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
-    <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
+  <div class="w-full" id="navbar">
+    <div class="flex items-center fixed" id="logo">
+      <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
+      <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
+    </div>
   </div>
 
   {/* lines */}
@@ -94,7 +96,7 @@ import { Image } from 'astro:assets';
   }
 
   #text {
-    animation: shake 1.5s linear;
+    animation: shake 2s linear;
   }
 
   /* logo直接出现 */
@@ -171,6 +173,20 @@ import { Image } from 'astro:assets';
   const startNieTaQrCode = document.querySelector('#qr-code-1') as HTMLImageElement;
   const joinCommunityFrameWork = document.querySelector('#qr-code-framework-2') as HTMLDivElement;
   const joinCommunityQrCode = document.querySelector('#qr-code-2') as HTMLImageElement;
+  // navbar
+  window.addEventListener('scroll', function () {
+    var navbar = document.getElementById('navbar')!;
+    var headerHeight = document.getElementById('navbar')?.offsetHeight!;
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop >= headerHeight / 2) {
+      navbar.style.backgroundColor = '#131B22';
+      navbar.style.boxShadow = 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px';
+    } else {
+      navbar.style.backgroundColor = '';
+      navbar.style.boxShadow = '';
+    }
+  });
+
   joinCommunity?.addEventListener('mouseenter', () => {
     joinCommunity.src = joinCommunityActive.src;
     joinCommunityFrameWork.style.display = 'block';
@@ -179,8 +195,10 @@ import { Image } from 'astro:assets';
 
   joinCommunity?.addEventListener('mouseleave', () => {
     joinCommunity.src = JoinCommunityNormal.src;
-    joinCommunityFrameWork.style.display = 'none';
-    joinCommunityQrCode.style.display = 'none';
+    setTimeout(() => {
+      joinCommunityFrameWork.style.display = 'none';
+      joinCommunityQrCode.style.display = 'none';
+    }, 500);
   });
 
   startNietTa?.addEventListener('mouseenter', () => {
@@ -191,7 +209,9 @@ import { Image } from 'astro:assets';
 
   startNietTa?.addEventListener('mouseleave', () => {
     startNietTa.src = startNietaNormal.src;
-    startNieTaFrameWork.style.display = 'none';
-    startNieTaQrCode.style.display = 'none';
+    setTimeout(() => {
+      startNieTaFrameWork.style.display = 'none';
+      startNieTaQrCode.style.display = 'none';
+    }, 500);
   });
 </script>

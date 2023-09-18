@@ -1,5 +1,15 @@
 @mixin layout-744 {
   /* nietaheader */
+  #navbar {
+    top: 0;
+    left: 0;
+    height: 0.860215rem;
+    line-height: 0.860215rem;
+    transition: background-color 0.3s ease;
+    z-index: 999;
+    position: fixed;
+  }
+
   #logo {
     top: 0.215054rem;
     left: 0.645161rem;

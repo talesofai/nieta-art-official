@@ -46,6 +46,7 @@ import Animation from './animation.astro';
     var image1 = document.querySelector('#headerAssistant') as HTMLImageElement;
     var image2 = document.querySelector('#contentAssistant') as HTMLImageElement;
     var image3 = document.querySelector('#trainsAssistant') as HTMLImageElement;
+
     var parent = mainContent.parentNode!;
     var height = 0;
     var width = 0;
@@ -92,74 +93,10 @@ import Animation from './animation.astro';
               bottomProgressBar.style.display = 'none';
               progressBar.style.animation = 'progressBarAnimation 1s ease-in-out forwards';
 
-              // 启动 loading-text 向右滑动并逐渐消失的动画
-              nextHeaderAniamiton();
-
+              toHome();
               loadingText.style.animation = 'loadingTextAnimation 1s ease-in-out forwards';
             }, 1000); // 停留 1 秒钟
 
-            function nextHeaderAniamiton() {
-              setTimeout(() => {
-                loader.remove();
-                progressBar.remove();
-                bottomProgressBar.remove();
-                percentage.remove();
-                loadingText.remove();
-                parent.insertBefore(mainContent.firstChild!, mainContent);
-                animationBox.style.background = '#0E1418';
-                setTimeout(() => {
-                  nextContentAnimation1();
-                }, 500);
-              }, 1000);
-            }
-            function nextContentAnimation1() {
-              setTimeout(() => {
-                loader.remove();
-                progressBar.remove();
-                bottomProgressBar.remove();
-                percentage.remove();
-                loadingText.remove();
-                nietaHeader.remove();
-                parent.insertBefore(mainContent.firstChild!, mainContent);
-                nietaContent1.style.animation = 'slideInBottom 1s ease-in-out forwards';
-                setTimeout(() => {
-                  nextContentAnimation2();
-                }, 500);
-              }, 2000);
-            }
-            function nextContentAnimation2() {
-              setTimeout(() => {
-                loader.remove();
-                progressBar.remove();
-                bottomProgressBar.remove();
-                percentage.remove();
-                loadingText.remove();
-                nietaHeader.remove();
-                nietaContent1.remove();
-                parent.insertBefore(nietaContent2, mainContent);
-                nietaContent2.style.animation = 'slideInBottom 1s ease-in-out forwards';
-                setTimeout(() => {
-                  nextContentAnimation3();
-                }, 500);
-              }, 2000);
-            }
-            function nextContentAnimation3() {
-              setTimeout(() => {
-                loader.remove();
-                progressBar.remove();
-                bottomProgressBar.remove();
-                percentage.remove();
-                loadingText.remove();
-                nietaHeader.remove();
-                nietaContent1.remove();
-                nietaContent2.remove();
-                parent.insertBefore(nietaContent3, mainContent);
-                nietaContent3.style.animation = 'slideInBottom 1s ease-in-out forwards';
-                setTimeout(() => {
-                  toHome();
-                }, 500);
-              }, 2000);
-            }
             function toHome() {
               setTimeout(() => {
                 loader.remove();
@@ -167,10 +104,6 @@ import Animation from './animation.astro';
                 bottomProgressBar.remove();
                 percentage.remove();
                 loadingText.remove();
-                nietaHeader.remove();
-                nietaContent1.remove();
-                nietaContent2.remove();
-                nietaContent3.remove();
                 character1.remove();
                 character2.remove();
                 character3.remove();
