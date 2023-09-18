@@ -22,10 +22,12 @@
     "@types/react-dom": "^18.0.6",
     "amfe-flexible": "^2.2.1",
     "astro": "^3.0.10",
+    "libpag": "^4.2.84",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "sharp": "^0.32.4",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "rollup-plugin-copy": "^3.4.0"
   },
   "config": {
     "commitizen": {
