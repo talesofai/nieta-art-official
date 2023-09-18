@@ -12,7 +12,7 @@ export default defineConfig({
     assetsPrefix: 'https://oss.talesofai.cn/static/official/',
   },
   vite: {
-    assetsInclude: ['**/*.wasm'],
+    assetsInclude: ['**/*.wasm', '**/*.pag'],
     build: {
       rollupOptions: {
         output: {

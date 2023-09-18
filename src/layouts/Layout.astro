@@ -24,11 +24,14 @@ const { title } = Astro.props;
   </body>
   <script>
     import { loadLibPag } from '@utils/pag';
+    import Character1 from '@assets/pag/角色1_bmp.pag';
+    import Character2 from '@assets/pag/角色2_bmp.pag';
+    import Character4 from '@assets/pag/角色4_bmp.pag';
 
     const imageList = [
-      { id: 'headerAssistant', url: '/src/assets/pag/角色1_bmp.pag', canvasId: 'pag1' },
-      { id: 'contentAssistant', url: '/src/assets/pag/角色2_bmp.pag', canvasId: 'pag2' },
-      { id: 'trainsAssistant', url: '/src/assets/pag/角色4_bmp.pag', canvasId: 'pag3' },
+      { id: 'headerAssistant', url: Character1, canvasId: 'pag1' },
+      { id: 'contentAssistant', url: Character2, canvasId: 'pag2' },
+      { id: 'trainsAssistant', url: Character4, canvasId: 'pag3' },
     ];
     let stopLoading = false;
     loadLibPag().then((PAG) => {
