@@ -93,23 +93,44 @@ import { Image } from 'astro:assets';
     animation: slideInLeft 0.5s ease-in-out;
   }
 
+  #text {
+    animation: shake 1.5s linear;
+  }
+
   /* logo直接出现 */
   #logo {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
   }
 
   /* assistant以百叶窗方式出现 */
   #assistant {
-    animation: blindsIn 0.5s ease-in-out;
+    animation: blindsIn 1s ease-in-out;
   }
-
-  @keyframes slideInLeft {
+  @keyframes shake {
     0% {
-      transform: translateX(100%);
-      opacity: 0;
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-5px);
+    }
+    40% {
+      transform: translateX(5px);
+    }
+    60% {
+      transform: translateX(-5px);
+    }
+    80% {
+      transform: translateX(5px);
     }
     100% {
       transform: translateX(0);
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+    }
+    100% {
       opacity: 1;
     }
   }
