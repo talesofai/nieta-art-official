@@ -4,14 +4,94 @@ import NieTaContentTwo from './NieTaContentTwo.astro';
 import NieTaContentThree from './NieTaContentThree.astro';
 ---
 
-<div class="relative" style="background: #0E1418;" id="nieta-content1">
+<div class="relative nieta-content" style="background: #0E1418;" id="nieta-content1">
   <NieTaContentOne />
 </div>
-<div class="relative" style="background: #0E1418;" id="nieta-content2">
+<div class="relative nieta-content" style="background: #0E1418;" id="nieta-content2">
   <NieTaContentTwo />
 </div>
-<div class="relative" style="background: #0E1418;" id="nieta-content3">
+<div class="relative nieta-content" style="background: #0E1418;" id="nieta-content3">
   <NieTaContentThree />
 </div>
 
 <style></style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nietaContentElements = document.querySelectorAll('.nieta-content');
+    const scrollTrigger = 0.3;
+    const together = document.querySelector('#together') as HTMLDivElement;
+    const createStories = document.querySelector('#createStories') as HTMLDivElement;
+    const line2TopRight = document.querySelector('#line-2-top-right') as HTMLDivElement;
+    const line2BottomLeft = document.querySelector('#line-2-bottom-left') as HTMLDivElement;
+    const assistantNieTa = document.querySelector('#assistantNieTa') as HTMLDivElement;
+    const text2 = document.querySelector('#text-2') as HTMLDivElement;
+    const text3 = document.querySelector('#text-3') as HTMLDivElement;
+    const text3t = document.querySelector('#text-3-t') as HTMLDivElement;
+    const line3TopRight = document.querySelector('#line-3-top-right') as HTMLDivElement;
+    const line3BottomRight = document.querySelector('#line-3-bottom-right') as HTMLDivElement;
+    const assistantTrains = document.querySelector('#assistantTrains') as HTMLDivElement;
+    const text4 = document.querySelector('#text-4') as HTMLDivElement;
+    const text4t = document.querySelector('#text-4-t') as HTMLDivElement;
+    const handleIntersection = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > scrollTrigger) {
+          const element = entry.target;
+          if (element.id === 'nieta-content1') {
+            together.style.animation = 'slideInLeft 2s ease-in-out';
+            createStories.style.animation = 'slideInRight 2s ease-in-out';
+            line2TopRight.style.animation = 'slideInLeft 1s ease-in-out';
+            line2BottomLeft.style.animation = 'slideInRight 1s ease-in-out';
+            assistantNieTa.style.animation = 'blindsIn 1s ease-in-out';
+            text2.style.animation = 'fadeIn 2s ease-in-out';
+          } else if (element.id === 'nieta-content2') {
+            text3.style.animation = 'fadeIn 2s ease-in-out';
+            text3t.style.animation = 'fadeIn 2s ease-in-out';
+          } else if (element.id === 'nieta-content3') {
+            line3TopRight.style.animation = 'fadeIn 3s ease-in-out';
+            line3BottomRight.style.animation = 'fadeIn 3s ease-in-out';
+            assistantTrains.style.animation = 'fadeIn 2s ease-in-out';
+            text4.style.animation = 'fadeIn 2s ease-in-out';
+            text4t.style.animation = 'fadeIn 2s ease-in-out';
+          }
+          observer.unobserve(element);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: scrollTrigger,
+    });
+
+    nietaContentElements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
+
+  // document.addEventListener('DOMContentLoaded', function () {
+  //   const together = document.querySelector('#together') as HTMLDivElement;
+  //   const createStories = document.querySelector('#createStories') as HTMLDivElement;
+  //   const line2TopRight = document.querySelector('#line-2-top-right') as HTMLDivElement;
+  //   const line2BottomLeft = document.querySelector('#line-2-bottom-left') as HTMLDivElement;
+  //   const assistantNieTa = document.querySelector('#assistantNieTa') as HTMLDivElement;
+  //   const text2 = document.querySelector('#text-2') as HTMLDivElement;
+
+  //   const scrollTrigger = 0.3;
+
+  //   window.addEventListener('scroll', () => {
+  //     const scrollY = window.scrollY || window.pageYOffset;
+  //     const windowHeight = window.innerHeight;
+
+  //     const triggerPoint = windowHeight * scrollTrigger;
+
+  //     if (scrollY > triggerPoint) {
+  //       together.style.animation = 'slideInLeft 2s ease-in-out';
+  //       createStories.style.animation = 'slideInRight 2s ease-in-out';
+  //       line2TopRight.style.animation = 'slideInLeft 1s ease-in-out';
+  //       line2BottomLeft.style.animation = 'slideInRight 1s ease-in-out';
+  //       assistantNieTa.style.animation = 'blindsIn 1s ease-in-out';
+  //       text2.style.animation = 'fadeIn 2s ease-in-out';
+  //     }
+  //   });
+  // });
+</script>

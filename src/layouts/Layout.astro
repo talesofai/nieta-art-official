@@ -50,7 +50,7 @@ const { title } = Astro.props;
       });
 
       Promise.all(loadImages).then((canvases) => {
-        console.log(canvases);
+        // console.log(canvases);
       });
     });
   </script>
@@ -92,13 +92,13 @@ const { title } = Astro.props;
     }
   }
 
-  @media screen and (min-width: 376px) and (max-width: 744px) {
+  @media screen and (min-width: 720px) and (max-width: 744px) {
     @include layout-744;
     body {
       grid-template-rows: 14.96rem 14.96rem 7.53rem 14.58rem 0.65rem;
     }
   }
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 719px) {
     @include layout-375;
     body {
       grid-template-rows: 21.65rem 21.65rem 11.84rem 17.79rem 2.8rem;
