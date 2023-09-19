@@ -259,7 +259,7 @@
     left: 0;
     right: 0;
     top: 4.408602rem;
-    width: 100%;
+    width: 14.395161rem;
     height: 2.043011rem;
     overflow: hidden;
   }
@@ -274,8 +274,10 @@
 
   .barrage-1,
   .barrage-2 {
+    height: 0.752688rem;
     animation: scroll 10s linear infinite;
   }
+
   @keyframes scroll {
     0% {
       transform: translateX(100%);
@@ -287,7 +289,7 @@
 
   /* nietacontentthree */
   #assistantTrains {
-    bottom: 2.258065rem;
+    bottom: 2.244624rem;
     left: 0.873656rem;
     right: 0.873656rem;
   }
@@ -385,19 +387,20 @@
     top: 0.215054rem;
     bottom: 0.215054rem;
     left: 1.639785rem;
-    width: 1.88172rem;
+    width: 2.016129rem;
     height: 0.228495rem;
     color: #fff;
     font-size: 0.16129rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    white-space: nowrap;
   }
 
   #address {
     top: 0.215054rem;
     bottom: 0.215054rem;
-    left: 3.508065rem;
+    right: 0.645161rem;
     width: 5.819892rem;
     height: 0.228495rem;
     color: #fff;
@@ -405,5 +408,6 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    white-space: nowrap;
   }
 }

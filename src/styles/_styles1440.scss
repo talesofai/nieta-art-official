@@ -258,7 +258,7 @@
 
   /* nietacontentthree */
   #assistantTrains {
-    top: 0.027778rem;
+    top: 0.833333rem;
     left: 0.666667rem;
   }
 
@@ -340,9 +340,9 @@
   }
 
   #email {
-    top: 0.138889rem;
-    bottom: 0.138889rem;
-    left: 5.354167rem;
+    top: 0.163194rem;
+    bottom: 0.163194rem;
+    right: 3.868056rem;
     width: 0.972222rem;
     height: 0.118056rem;
     color: #fff;
@@ -350,18 +350,20 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    white-space: nowrap;
   }
 
   #address {
-    top: 0.138889rem;
-    bottom: 0.138889rem;
-    left: 6.319444rem;
-    width: 3.034722rem;
+    top: 0.163194rem;
+    bottom: 0.163194rem;
+    right: 0.666667rem; // 96px
+    width: 3.034722rem; // 437px
     height: 0.228495rem;
     color: #fff;
     font-size: 0.083333rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    white-space: nowrap;
   }
 }

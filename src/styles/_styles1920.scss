@@ -253,7 +253,7 @@
 
   /* nietacontentthree */
   #assistantTrains {
-    top: 0.020833rem;
+    top: 0.625rem;
     left: 1.260417rem;
   }
 
@@ -336,22 +336,22 @@
   }
 
   #email {
-    top: 0.104167rem;
-    bottom: 0.104167rem;
-    left: 5.75rem;
-    width: 0.729167rem;
+    top: 0.122396rem;
+    bottom: 0.122396rem;
+    right: 3.661458rem;
     height: 0.088542rem;
     color: #fff;
     font-size: 0.0625rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    white-space: nowrap;
   }
 
   #address {
-    top: 0.104167rem;
-    bottom: 0.104167rem;
-    left: 6.473958rem;
+    top: 0.122396rem;
+    bottom: 0.122396rem;
+    right: 1.260417rem;
     width: 2.276042rem;
     height: 0.088542rem;
     color: #fff;
@@ -359,5 +359,6 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    white-space: nowrap;
   }
 }
