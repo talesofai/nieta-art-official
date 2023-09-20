@@ -50,11 +50,12 @@
   }
 
   #assistant {
+    width: 5.055556rem;
+    height: 5.847222rem;
     top: 0.631944rem;
     left: 0.666667rem;
   }
 
-  #assistant img,
   #pag1 {
     width: 5.055556rem;
     height: 5.847222rem;
@@ -342,7 +343,7 @@
   #email {
     top: 0.163194rem;
     bottom: 0.163194rem;
-    right: 3.868056rem;
+    left: 5.354167rem;
     width: 0.972222rem;
     height: 0.118056rem;
     color: #fff;
@@ -364,6 +365,5 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    white-space: nowrap;
   }
 }

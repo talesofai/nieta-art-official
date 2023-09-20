@@ -27,32 +27,50 @@ const { title } = Astro.props;
     import Character1 from '@assets/pag/角色1_bmp.pag';
     import Character2 from '@assets/pag/角色2_bmp.pag';
     import Character4 from '@assets/pag/角色4_bmp.pag';
-
     const imageList = [
-      { id: 'headerAssistant', url: Character1, canvasId: 'pag1' },
-      { id: 'contentAssistant', url: Character2, canvasId: 'pag2' },
-      { id: 'trainsAssistant', url: Character4, canvasId: 'pag3' },
+      { id: 'assistant', url: Character1, canvasId: 'pag1' },
+      { id: 'assistantNieTa', url: Character2, canvasId: 'pag2' },
+      { id: 'assistantTrains', url: Character4, canvasId: 'pag3' },
     ];
-    let stopLoading = false;
-    loadLibPag().then((PAG) => {
-      const loadImages = imageList.map(({ id, url, canvasId }) => {
-        return fetch(url)
-          .then((response) => response.arrayBuffer())
-          .then(async (buffer) => {
-            // character.style.display = 'none';
-            const pagFile = await PAG.PAGFile.load(buffer);
-            const canvas = document.getElementById(canvasId);
-            const pagView = await PAG.PAGView.init(pagFile, canvas);
-            pagView.setRepeatCount(0);
-            await pagView.play();
-            return canvas;
-          });
-      });
 
-      Promise.all(loadImages).then((canvases) => {
-        // console.log(canvases);
+    let stopLoading = false;
+    let pagViews = []; // 存储PAGView实例
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadLibPag().then((PAG) => {
+        const loadImages = imageList.map(({ id, url, canvasId }) => {
+          return fetch(url)
+            .then((response) => response.arrayBuffer())
+            .then(async (buffer) => {
+              const dpr = window.devicePixelRatio;
+              const pagFile = await PAG.PAGFile.load(buffer);
+              const canvas = document.getElementById(canvasId);
+              const styleDeclaration = window.getComputedStyle(canvas, null);
+              canvas.width = Number(styleDeclaration.width.replace('px', '')) * dpr;
+              canvas.height = Number(styleDeclaration.height.replace('px', '')) * dpr;
+              const pagView = await PAG.PAGView.init(pagFile, canvas, { useScale: false });
+              pagView.setRepeatCount(0);
+              pagViews.push({ canvas, pagView, pagFile });
+              await pagView.play();
+              return canvas;
+            });
+        });
+        Promise.all(loadImages).then(() => {
+          window.addEventListener('resize', resizeCanvas);
+        });
       });
     });
+
+    function resizeCanvas() {
+      pagViews.forEach(({ canvas, pagView, pagFile }) => {
+        const dpr = window.devicePixelRatio;
+        const styleDeclaration = window.getComputedStyle(canvas, null);
+        canvas.width = Number(styleDeclaration.width.replace('px', '')) * dpr;
+        canvas.height = Number(styleDeclaration.height.replace('px', '')) * dpr;
+        pagView.updateSize();
+        pagView.flush();
+      });
+    }
   </script>
 </html>
 <style is:global lang="scss">

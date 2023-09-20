@@ -51,12 +51,13 @@
   }
 
   #assistant {
+    width: 7.822581rem;
+    height: 8.494624rem;
     top: 1.075269rem;
     left: 1.08871rem;
     right: 1.08871rem;
   }
 
-  #assistant img,
   #pag1 {
     width: 7.822581rem;
     height: 8.494624rem;
@@ -196,8 +197,8 @@
 
   #assistantNieTa img,
   #pag2 {
-    width: 7.258065rem;
-    height: 7.150538rem;
+    width: 100%;
+    height: 100%;
   }
 
   #line-2-bottom-left {
@@ -259,8 +260,8 @@
     left: 0;
     right: 0;
     top: 4.408602rem;
-    // width: 14.395161rem;
-    width: 100%;
+    width: 14.395161rem;
+    // width: 100%;
     height: 2.043011rem;
     overflow: hidden;
   }
@@ -276,7 +277,14 @@
   .barrage-1,
   .barrage-2 {
     height: 0.752688rem;
+  }
+  .barrage-1 {
     animation: scroll 10s linear infinite;
+  }
+
+  .barrage-2 {
+    animation: scroll 10s linear infinite;
+    animation-delay: 1s;
   }
 
   @keyframes scroll {

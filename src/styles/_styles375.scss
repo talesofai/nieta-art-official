@@ -51,12 +51,13 @@
   }
 
   #assistant {
+    width: 8.933333rem;
+    height: 9.706667rem;
     top: 1.813333rem;
     left: 0.533333rem;
     right: 0.533333rem;
   }
 
-  #assistant img,
   #pag1 {
     width: 8.933333rem;
     height: 9.706667rem;
@@ -197,8 +198,8 @@
 
   #assistantNieTa img,
   #pag2 {
-    width: 8.933333rem;
-    height: 8.8rem;
+    width: 100%;
+    height: 100%;
   }
 
   #line-2-bottom-left {
@@ -261,6 +262,7 @@
     right: 0;
     top: 6.506667rem;
     width: 27.493333rem;
+    // width: 100%;
     height: 2.986667rem;
     line-height: 2.986667rem;
     overflow: hidden;
@@ -327,7 +329,15 @@
   .barrage-1,
   .barrage-2 {
     height: 1.28rem;
+  }
+
+  .barrage-1 {
     animation: scroll 10s linear infinite;
+  }
+
+  .barrage-2 {
+    animation: scroll 10s linear infinite;
+    animation-delay: 1s;
   }
 
   @keyframes scroll {
