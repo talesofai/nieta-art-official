@@ -1,0 +1,382 @@
+@mixin layout-1024 {
+  /* nietaheader */
+  #navbar {
+    top: 0;
+    left: 0;
+    height: 0.625rem;
+    line-height: 0.625rem;
+    transition: background-color 0.3s ease;
+    z-index: 999;
+    position: fixed;
+  }
+
+  #logo {
+    top: 0.15625rem;
+    left: 0.46875rem;
+  }
+
+  #logo img:nth-child(1) {
+    width: 0.3125rem;
+    height: 0.3125rem;
+  }
+
+  #logo img:nth-child(2) {
+    width: 0.703125rem;
+    height: 0.234375rem;
+    margin-left: 0.039063rem;
+  }
+
+  #line-1-top-right {
+    top: 0.78125rem;
+    right: 0.46875rem;
+  }
+
+  #line-1-top-right img {
+    width: 3.740234rem;
+    height: 1.357422rem;
+  }
+
+  #line-1-bottom-left {
+    display: none;
+  }
+
+  #line-1-bottom-right {
+    bottom: 0.429688rem;
+    right: 0.46875rem;
+  }
+
+  #line-1-bottom-right img {
+    width: 3.486328rem;
+    height: 0.683594rem;
+  }
+
+  #assistant {
+    width: 4.6875rem;
+    height: 5.419922rem;
+    top: 0.888672rem;
+    left: 0.46875rem;
+  }
+
+  #pag1 {
+    width: 4.6875rem;
+    height: 5.419922rem;
+  }
+
+  #text {
+    top: 2.128906rem;
+    right: 0.367188rem;
+  }
+
+  #text img {
+    width: 4.287109rem;
+    height: 1.757813rem;
+  }
+
+  #buttons {
+    bottom: 2.128906rem;
+    right: 0.097656rem;
+    z-index: 99;
+  }
+
+  #JoinCommunity,
+  #StartNieTa {
+    width: 2.480469rem;
+    height: 0.625rem;
+  }
+
+  #qr-code-framework-1 {
+    display: none;
+    right: 0.537109rem; //55px
+    top: 5.136719rem; // 526px
+  }
+
+  #qr-code-framework-2 {
+    display: none;
+    right: 3.076172rem;
+    top: 5.136719rem;
+  }
+
+  #qr-code-framework-1 img,
+  #qr-code-framework-2 img {
+    width: 1.757813rem;
+    height: 1.757813rem;
+  }
+
+  #qr-code-1 {
+    display: none;
+    right: 0.683594rem;
+    top: 5.332031rem;
+  }
+
+  #qr-code-2 {
+    display: none;
+    right: 3.222656rem;
+    top: 5.332031rem;
+  }
+
+  #qr-code-1 img,
+  #qr-code-2 img {
+    width: 1.464844rem;
+    height: 1.464844rem;
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+  }
+
+  #bottom-nieta {
+    bottom: 0;
+    right: 0;
+  }
+
+  #bottom-nieta img {
+    width: 6.835938rem;
+    height: 2.177734rem;
+  }
+
+  /* nietacontentone */
+  #createStories {
+    top: 0;
+    left: 0;
+  }
+
+  #createStories img {
+    width: 7.8125rem;
+    height: 0.947266rem;
+  }
+
+  #line-2-top-right {
+    right: 0.390625rem;
+    top: 0.390625rem;
+  }
+
+  #line-2-top-right img {
+    width: 2.958984rem;
+    height: 0.166016rem;
+  }
+
+  #text-2 img:nth-child(2) {
+    display: none;
+  }
+
+  #text-2 {
+    left: 0.46875rem;
+    top: 2.265625rem;
+  }
+
+  #text-2 img {
+    width: 3.75rem;
+    height: 1.40625rem;
+  }
+
+  #text-2-t {
+    top: 4.0625rem;
+    left: 0.46875rem;
+    width: 4.863281rem;
+    height: 0.78125rem;
+    color: #fff;
+    font-size: 0.15625rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 0.390625rem;
+  }
+
+  #assistantNieTa {
+    top: 0.957031rem;
+    right: 0.390625rem;
+  }
+
+  #assistantNieTa img,
+  #pag2 {
+    width: 5.273438rem;
+    height: 5.195313rem;
+  }
+
+  #line-2-bottom-left {
+    bottom: 0.390625rem;
+    left: 0.507813rem;
+  }
+
+  #line-2-bottom-left img {
+    width: 3.232422rem;
+    height: 0.800781rem;
+  }
+
+  #together {
+    bottom: 0;
+    right: 0;
+  }
+
+  #together img {
+    width: 6.835938rem;
+    height: 1.279297rem;
+  }
+
+  /* nietacontenttwo */
+  #text-3 img:nth-child(2) {
+    display: none;
+  }
+
+  #text-3 {
+    top: 0.78125rem;
+    left: 0.46875rem;
+  }
+
+  #text-3 img {
+    width: 2.324219rem;
+    height: 0.46875rem;
+  }
+
+  #text-3-t {
+    top: 1.40625rem;
+    left: 0.46875rem;
+    width: 8.90625rem;
+    height: 1.171875rem;
+    color: #fff;
+    font-size: 0.15625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.390625rem;
+  }
+
+  #barrage-container {
+    top: 3.203125rem;
+    width: 100%;
+    height: 1.640625rem;
+    overflow: hidden;
+  }
+
+  .barrage-2 {
+    margin-top: 0.390625rem;
+  }
+
+  .barrage-item:not(:first-child):not(:nth-child(6)) {
+    margin-left: 0.234375rem;
+  }
+
+  .barrage-1 {
+    animation: scroll 10s linear infinite;
+  }
+
+  .barrage-2 {
+    animation: scroll 10s linear infinite;
+    animation-delay: 1s;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* nietacontentthree */
+  #assistantTrains {
+    top: 1.123047rem;
+    left: 0.810547rem;
+  }
+
+  #assistantTrains img,
+  #pag3 {
+    width: 4.931641rem;
+    height: 3.857422rem;
+  }
+
+  #line-3-top-right {
+    top: 0.78125rem;
+    right: 0.380859rem;
+  }
+
+  #line-3-top-right img {
+    width: 2.900391rem;
+    height: 0.673828rem;
+  }
+
+  #text-4 img:nth-child(2) {
+    display: none;
+  }
+
+  #text-4 {
+    top: 1.835938rem;
+    right: 0.46875rem;
+  }
+
+  #text-4 img {
+    width: 3.75rem;
+    height: 0.46875rem;
+  }
+
+  #text-4-t {
+    top: 2.460938rem;
+    right: 0.46875rem;
+    width: 3.75rem;
+    height: 0.390625rem;
+    color: #fff;
+    font-size: 0.15625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.253906rem;
+  }
+
+  #button-upload {
+    right: 1.738281rem;
+    top: 3.320313rem;
+  }
+
+  #UploadModal {
+    width: 2.480469rem;
+    height: 0.625rem;
+  }
+
+  #line-3-bottom-right img:nth-child(2) {
+    display: none;
+  }
+
+  #line-3-bottom-right {
+    right: 0.380859rem;
+    bottom: 0.78125rem;
+  }
+
+  #line-3-bottom-right img {
+    width: 1.503906rem;
+    height: 0.322266rem;
+  }
+
+  /* nietafooter */
+  #text-5 {
+    top: 0.195313rem;
+    bottom: 0.195313rem;
+    left: 0.9375rem;
+  }
+
+  #text-5 img {
+    width: 0.703125rem;
+    height: 0.234375rem;
+  }
+
+  #email {
+    top: 0.229492rem;
+    bottom: 0.229492rem;
+    right: 4.970703rem;
+    width: 1.367188rem;
+    height: 0.166016rem;
+    color: #fff;
+    font-size: 0.117188rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  #address {
+    top: 0.229492rem;
+    bottom: 0.229492rem;
+    right: 0.46875rem;
+    width: 4.267578rem; // 437px
+    height: 0.166016rem;
+    color: #fff;
+    font-size: 0.117188rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
