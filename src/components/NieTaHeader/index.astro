@@ -36,10 +36,17 @@ import { Image } from 'astro:assets';
 
   {/* assistant */}
   <div class="absolute" id="assistant">
-    <!-- assistant pag -->
-    <!-- <canvas class="canvas" id="pag1"></canvas> -->
-
     <Image src={Assistant} decoding="async" loading="lazy" alt="assistant" id="headerAssistant" />
+  </div>
+
+  {/* tower */}
+  <div class="absolute" id="tower">
+    <canvas class="canvas" id="pag1"></canvas>
+  </div>
+
+  {/* ball */}
+  <div class="absolute" id="ball">
+    <canvas class="canvas" id="pag2"></canvas>
   </div>
 
   {/* text content */}
