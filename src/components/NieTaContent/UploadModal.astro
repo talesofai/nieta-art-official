@@ -4,3 +4,10 @@ import { Image } from 'astro:assets';
 ---
 
 <Image src={Upload} alt="Upload" decoding="async" loading="lazy" class="cursor-pointer" id="UploadModal" />
+
+<script>
+  const uploadModel = document.querySelector('#UploadModal');
+  uploadModel?.addEventListener('click', () => {
+    window.location.href = '/upload';
+  });
+</script>

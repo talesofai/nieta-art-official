@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #0e1418;
+}
+
+.tabbar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0.708333rem;
+  left: 4.111111rem;
+  right: 4.111111rem;
+  background-color: #182127;
+  width: 1.777778rem;
+  height: 0.277778rem;
+  border-radius: 0.138889rem;
+}
+
+.tab {
+  width: 0.833333rem;
+  height: 0.222222rem;
+  margin: 0 0.055556rem;
+}
+
+.tab.active {
+  width: 0.833333rem;
+  height: 0.222222rem;
+  border-radius: 0.138889rem;
+  background-color: #274afe;
+}

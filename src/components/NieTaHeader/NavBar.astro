@@ -1,0 +1,13 @@
+---
+import Logo from '@assets/images/logo.svg';
+import NieTaText from '@assets/text/nieta.svg';
+import { Image } from 'astro:assets';
+---
+
+{/* logo */}
+<div class="w-full" id="navbar">
+  <div class="flex items-center fixed" id="logo">
+    <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
+    <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
+  </div>
+</div>

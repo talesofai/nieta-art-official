@@ -1,0 +1,87 @@
+---
+import UploadModel from '@components/NieTaUpload/index';
+import Logo from '@assets/images/logo.svg';
+import NieTaText from '@assets/text/nieta.svg';
+import { Image } from 'astro:assets';
+---
+
+<div class="flex items-center fixed" id="logo">
+  <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
+  <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
+</div>
+<UploadModel client:load />
+
+<style lang="scss">
+  @use 'src/styles/_styles375' as *;
+  @use 'src/styles/_styles744' as *;
+  @use 'src/styles/_styles1024' as *;
+  @use 'src/styles/_styles1440' as *;
+  @use 'src/styles/_styles1920' as *;
+
+  // 大于等于1920px
+  @media screen and (min-width: 1920px) {
+    @include layout-1920;
+  }
+  // 大于等于1440小于等于1919
+  @media screen and (min-width: 1440px) and (max-width: 1919px) {
+    @include layout-1440;
+  }
+  // 大于等于1024小于等于1439
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    @include layout-1024;
+  }
+  // 大于等于744小于等于1024
+  @media screen and (min-width: 744px) and (max-width: 1023px) {
+    @include layout-744;
+  }
+
+  @media screen and (max-width: 743px) {
+    @include layout-375;
+  }
+</style>
+
+<script is:inline>
+  (function flexible(window, document) {
+    var docEl = document.documentElement;
+    var dpr = window.devicePixelRatio || 1;
+
+    // adjust body font size
+    function setBodyFontSize() {
+      if (document.body) {
+        document.body.style.fontSize = 12 * dpr + 'px';
+      } else {
+        document.addEventListener('DOMContentLoaded', setBodyFontSize);
+      }
+    }
+    setBodyFontSize();
+
+    // set 1rem = viewWidth / 10
+    function setRemUnit() {
+      var rem = docEl.clientWidth / 10;
+      docEl.style.fontSize = rem + 'px';
+    }
+
+    setRemUnit();
+
+    // reset rem unit on page resize
+    window.addEventListener('resize', setRemUnit);
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        setRemUnit();
+      }
+    });
+
+    // detect 0.5px supports
+    if (dpr >= 2) {
+      var fakeBody = document.createElement('body');
+      var testElement = document.createElement('div');
+      testElement.style.border = '.5px solid transparent';
+      fakeBody.appendChild(testElement);
+      docEl.appendChild(fakeBody);
+      if (testElement.offsetHeight === 1) {
+        docEl.classList.add('hairlines');
+      }
+      docEl.removeChild(fakeBody);
+    }
+  })(window, document);
+</script>

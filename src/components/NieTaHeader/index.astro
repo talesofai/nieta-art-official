@@ -1,6 +1,4 @@
 ---
-import Logo from '@assets/images/logo.svg';
-import NieTaText from '@assets/text/nieta.svg';
 import TopRightLine from '@assets/images/line.svg';
 import Assistant from '@assets/images/assistant.png';
 import TextContent from '@assets/text/text.svg';
@@ -14,6 +12,7 @@ import JoinCommunityQrCodeFrameWork from '@assets/qrcode/qrcode-framework-2.svg'
 import StartNietaQrCode from '@assets/qrcode/start-nieta-qrcode.png';
 import JoinCommunityQrCode from '@assets/qrcode/join-nieta-qrcode.png';
 import { Image } from 'astro:assets';
+import NavBar from './NavBar.astro';
 ---
 
 <header
@@ -21,14 +20,7 @@ import { Image } from 'astro:assets';
   style="background: linear-gradient(156deg, #151a31 0%, #191e37 14.73%, #12172c 35.15%, #0d1317 76.29%);"
   id="nieta-header"
 >
-  {/* logo */}
-  <div class="w-full" id="navbar">
-    <div class="flex items-center fixed" id="logo">
-      <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
-      <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
-    </div>
-  </div>
-
+  <NavBar />
   {/* lines */}
   <div class="absolute" id="line-1-top-right">
     <Image src={TopRightLine} alt="Line" decoding="async" loading="lazy" />
