@@ -1,2 +1,2 @@
-*.css linguist-generated=false
-*.scss linguist-generated=false
+*.css linguist-vendored
+*.scss linguist-vendored
