@@ -2,7 +2,7 @@ import './styles/index.scss';
 import UploadIcon from '@assets/icon/upload.svg';
 import React, { useEffect, useRef, useState } from 'react';
 import type { UploadProps } from 'antd';
-import { Form, Input, message, Radio, Upload } from 'antd';
+import { Form, Input, message, Radio, Upload, Button, Space } from 'antd';
 import { Checkbox } from 'antd';
 const { Dragger } = Upload;
 
@@ -75,6 +75,9 @@ const index: React.FC = () => {
               <Form.Item name="agree">
                 <Checkbox>我同意其他用户在本小程序内使用我的模型生成图片</Checkbox>
               </Form.Item>
+              <Form.Item style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button type="primary">提交模型</Button>
+              </Form.Item>
             </Form>
           </>
         )}
@@ -104,6 +107,9 @@ const index: React.FC = () => {
               </Form.Item>
               <Form.Item name="agree">
                 <Checkbox>我同意其他用户在本小程序内使用我的模型生成图片</Checkbox>
+              </Form.Item>
+              <Form.Item style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button type="primary">提交模型</Button>
               </Form.Item>
             </Form>
           </div>
