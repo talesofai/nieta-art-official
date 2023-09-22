@@ -16,12 +16,20 @@
   width: 1.777778rem;
   height: 0.277778rem;
   border-radius: 0.138889rem;
+  overflow: hidden;
 }
 
 .tab {
   width: 0.833333rem;
   height: 0.222222rem;
   margin: 0 0.055556rem;
+  color: #88919c;
+  text-align: center;
+  font-size: 0.083333rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: transform 0.3s ease;
 }
 
 .tab.active {
@@ -29,4 +37,65 @@
   height: 0.222222rem;
   border-radius: 0.138889rem;
   background-color: #274afe;
+  color: #fff;
+  text-align: center;
+  font-size: 0.083333rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: all 0.3s ease;
+}
+
+#upload-file {
+  top: 1.097222rem;
+  left: 3.611111rem;
+  right: 3.611111rem;
+  width: 2.777778rem;
+  height: 1.111111rem;
+  z-index: 9;
+  border-radius: 0.083333rem;
+}
+
+#upload-icon {
+  width: 0.222222rem;
+  height: 0.222222rem;
+}
+
+#upload-text {
+  color: #fff;
+  font-size: 0.083333rem;
+}
+
+#form-ref {
+  top: 2.430556rem;
+  left: 3.611111rem;
+  right: 3.611111rem;
+  width: 2.777778rem;
+}
+
+#form-ref2 {
+  top: 1.097222rem;
+  left: 3.611111rem;
+  right: 3.611111rem;
+  width: 2.777778rem;
+}
+
+.ant-upload-drag {
+  border: 0.010417rem dashed #d9d9d9 !important;
+}
+
+label {
+  color: #fff !important;
+}
+
+input {
+  width: 2.777778rem !important;
+  height: 0.284722rem !important;
+  background: #151e24 !important;
+  border-color: #2c353e !important;
+}
+
+textarea {
+  background: #151e24 !important;
+  border-color: #2c353e !important;
 }

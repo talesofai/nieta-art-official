@@ -9,7 +9,7 @@ import { Image } from 'astro:assets';
   <Image src={Logo} alt="Logo" decoding="async" loading="lazy" />
   <Image src={NieTaText} alt="NieTa" decoding="async" loading="lazy" />
 </div>
-<UploadModel client:load />
+<UploadModel client:only="react" />
 
 <style lang="scss">
   @use 'src/styles/_styles375' as *;
@@ -41,6 +41,9 @@ import { Image } from 'astro:assets';
 </style>
 
 <script is:inline>
+  document.querySelector('#logo').addEventListener('click', () => {
+    window.location.href = '/';
+  });
   (function flexible(window, document) {
     var docEl = document.documentElement;
     var dpr = window.devicePixelRatio || 1;
