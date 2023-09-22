@@ -34,10 +34,11 @@ import Animation from './animation.astro';
     var height = 0;
     var width = 0;
     var touchedPercentage = false;
+
+    document.querySelector('html')!.style.height = `${window.innerHeight}px`;
     animationBox.style.backgroundColor = '#000';
     var bottomInterval = setInterval(loadBottomProgress, 24);
     function loadBottomProgress() {
-      animationBox.classList.add('no-interaction');
       if (width >= 100) {
         clearInterval(bottomInterval);
         animateProgressBar();
@@ -93,7 +94,6 @@ import Animation from './animation.astro';
                 parent.insertBefore(nietaContent2, mainContent);
                 parent.insertBefore(nietaContent3, mainContent);
                 parent.insertBefore(nietaFooter, mainContent);
-                animationBox.classList.remove('no-interaction');
               }, 1500);
             }
           }
