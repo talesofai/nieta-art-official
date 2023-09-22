@@ -37,6 +37,7 @@ import Animation from './animation.astro';
     animationBox.style.backgroundColor = '#000';
     var bottomInterval = setInterval(loadBottomProgress, 24);
     function loadBottomProgress() {
+      animationBox.classList.add('no-interaction');
       if (width >= 100) {
         clearInterval(bottomInterval);
         animateProgressBar();
@@ -92,6 +93,7 @@ import Animation from './animation.astro';
                 parent.insertBefore(nietaContent2, mainContent);
                 parent.insertBefore(nietaContent3, mainContent);
                 parent.insertBefore(nietaFooter, mainContent);
+                animationBox.classList.remove('no-interaction');
               }, 1500);
             }
           }
