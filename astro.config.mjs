@@ -13,6 +13,15 @@ export default defineConfig({
   },
   vite: {
     assetsInclude: ['**/*.wasm', '**/*.pag'],
+    server: {
+      proxy: {
+        '/api': {
+          target: 'https://dev.api.talesofai.cn',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+      },
+    },
     build: {
       rollupOptions: {
         output: {

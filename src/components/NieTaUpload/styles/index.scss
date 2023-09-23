@@ -87,15 +87,20 @@ input {
   height: 0.284722rem !important;
   background: #151e24 !important;
   border-color: #2c353e !important;
+  caret-color: #fff !important;
+  color: #fff !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #55606a !important;
 }
 
 textarea {
   background: #151e24 !important;
   border-color: #2c353e !important;
-}
-
-.ant-btn span {
-  background: #262d30 !important;
+  caret-color: #fff !important;
+  color: #fff !important;
 }
 
 .ant-upload-list-item-name {
@@ -110,7 +115,6 @@ textarea {
   width: 200px !important;
   height: 40px !important;
   border-radius: 24px !important;
-  background: #262d30 !important;
 }
 
 .ant-btn-icon svg,
