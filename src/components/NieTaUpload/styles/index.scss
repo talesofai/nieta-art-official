@@ -2,7 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #0e1418;
+}
+
+body {
+  background-color: #0e1418;
 }
 
 .tabbar {
@@ -46,16 +49,6 @@
   transition: all 0.3s ease;
 }
 
-#upload-file {
-  top: 1.097222rem;
-  left: 3.611111rem;
-  right: 3.611111rem;
-  width: 2.777778rem;
-  height: 1.111111rem;
-  z-index: 9;
-  border-radius: 0.083333rem;
-}
-
 #upload-icon {
   width: 0.222222rem;
   height: 0.222222rem;
@@ -67,10 +60,11 @@
 }
 
 #form-ref {
-  top: 2.430556rem;
+  top: 1.097222rem;
   left: 3.611111rem;
   right: 3.611111rem;
   width: 2.777778rem;
+  z-index: 9999;
 }
 
 #form-ref2 {
@@ -100,13 +94,26 @@ textarea {
   border-color: #2c353e !important;
 }
 
-.ant-btn {
+.ant-btn span {
+  background: #262d30 !important;
+}
+
+.ant-upload-list-item-name {
+  color: #d8e3ec !important;
+  font-size: 0.083333rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#upload-btn {
   width: 200px !important;
   height: 40px !important;
   border-radius: 24px !important;
   background: #262d30 !important;
 }
 
-.ant-btn span {
-  background: #262d30 !important;
+.ant-btn-icon svg,
+.ant-upload-icon svg {
+  fill: #d8e3ec !important;
 }

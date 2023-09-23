@@ -39,7 +39,7 @@ const index: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="upload-box">
       <div className="tabbar">
         <button className={`tab ${activeTab === 0 ? 'active' : ''}`} onClick={() => changeTab(0)}>
           上传模型文件
@@ -52,8 +52,17 @@ const index: React.FC = () => {
       <div className="content">
         {activeTab === 0 && (
           <>
-            <UploadFile />
             <Form name="control-ref" className="absolute" id="form-ref" layout={formLayout}>
+              <Form.Item>
+                <Dragger {...props}>
+                  <p className="ant-upload-drag-icon flex justify-center">
+                    <img src={UploadIcon.src} id="upload-icon" />
+                  </p>
+                  <p className="ant-upload-text" id="upload-text">
+                    请上传ZIP模型文件
+                  </p>
+                </Dragger>
+              </Form.Item>
               <Form.Item name="modelName" label="模型名称" rules={[{ required: true }]}>
                 <Input />
               </Form.Item>
@@ -76,7 +85,9 @@ const index: React.FC = () => {
                 <Checkbox>我同意其他用户在本小程序内使用我的模型生成图片</Checkbox>
               </Form.Item>
               <Form.Item style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button type="primary">提交模型</Button>
+                <Button type="primary" id="upload-btn">
+                  提交模型
+                </Button>
               </Form.Item>
             </Form>
           </>
@@ -115,21 +126,6 @@ const index: React.FC = () => {
           </div>
         )}
       </div>
-    </>
-  );
-};
-
-const UploadFile = () => {
-  return (
-    <div className="absolute" id="upload-file">
-      <Dragger {...props}>
-        <p className="ant-upload-drag-icon flex justify-center">
-          <img src={UploadIcon.src} id="upload-icon" />
-        </p>
-        <p className="ant-upload-text" id="upload-text">
-          请上传ZIP模型文件
-        </p>
-      </Dragger>
     </div>
   );
 };
