@@ -10,14 +10,14 @@
       <img src="https://img.shields.io/badge/React-18.0.0-yellow" alt="react">
     </a>
     <a href="#">
-        <img src="">
+        <img src="https://img.shields.io/github/license/talesofai/nieta-art">
     </a>
 </p>
 <h4 align="center">✨ This is a nieta offical website.</h4>
 
 ### 🧑‍🚀 Record
 * **Date: 2023.9.24**
-* **NieTa:** <img width='100px' height='100px' src="https://z1.ax1x.com/2023/09/24/pPTxxu6.png"></img>
+* <img width='100px' height='100px' src="https://z1.ax1x.com/2023/09/24/pPTxxu6.png"></img>
 
 
 ### 🚀 Install
@@ -30,9 +30,9 @@
 
 
 ### 👀 Preview
-[![pPTxR9s.png](https://z1.ax1x.com/2023/09/24/pPTxR9s.png)](https://imgse.com/i/pPTxR9s)
+[![pPTxR9s.png](https://oss.talesofai.cn/internal/image_hosting/page%201.png)](https://oss.talesofai.cn/internal/image_hosting/page%201.png)
 
-[![pPTxW3n.png](https://z1.ax1x.com/2023/09/24/pPTxW3n.png)](https://imgse.com/i/pPTxW3n)
+
   
 
 
