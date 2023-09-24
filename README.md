@@ -30,7 +30,7 @@
 
 
 ### 👀 Preview
-[![pPTxR9s.png](https://oss.talesofai.cn/internal/image_hosting/page%201.png)](https://oss.talesofai.cn/internal/image_hosting/page%201.png)
+[![pPTxR9s.png](https://github.com/huccct/huccct.github.io/blob/master/assets/page%201.png)](https://github.com/huccct/huccct.github.io/blob/master/assets/page%201.png)
 
 
   
