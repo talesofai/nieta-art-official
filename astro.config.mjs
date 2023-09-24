@@ -16,7 +16,7 @@ export default defineConfig({
     server: {
       proxy: {
         '/api': {
-          target: 'https://dev.api.talesofai.cn',
+          target: 'https://api.talesofai.cn/',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },
