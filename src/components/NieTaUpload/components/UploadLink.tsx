@@ -34,9 +34,15 @@ export const UploadLink = () => {
     const payload = JSON.stringify({ ...values });
 
     const loadingMessage = message.loading('Uploading model...', 0);
+
+    let url = '/api/v1/util/upload-model';
+
+    if (process.env.NODE_ENV === 'production') {
+      url = 'https://api.talesofai.cn/v1/util/upload-model';
+    }
     // 发请求
     try {
-      const response = await fetch('/api/v1/util/upload-model', {
+      const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
         headers: headers,
