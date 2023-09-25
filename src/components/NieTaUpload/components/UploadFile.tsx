@@ -7,30 +7,33 @@ const { TextArea } = Input;
 
 type LayoutType = Parameters<typeof Form>[0]['layout'];
 
-const props: UploadProps = {
-  name: 'file',
-  multiple: true,
-  action: '',
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== 'uploading') {
-      console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
-      message.success(`${info.file.name} 上传成功`);
-    } else if (status === 'error') {
-      message.error(`${info.file.name} 上传失败`);
-    }
-  },
-  onDrop(e) {
-    console.log('Dropped files', e.dataTransfer.files);
-  },
-};
-
 export const UploadFile = () => {
   const [value, setValue] = useState(1);
   const [formLayout, setFormLayout] = useState<LayoutType>('vertical');
+
   const [form] = Form.useForm();
+
+  const props: UploadProps = {
+    name: 'file',
+    multiple: true,
+    action: '',
+    maxCount: 1,
+    onChange(info) {
+      const { status } = info.file;
+      if (status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        message.success(`${info.file.name} 上传成功`);
+      } else if (status === 'error') {
+        message.error(`${info.file.name} 上传失败`);
+      }
+    },
+    onDrop(e) {
+      console.log('Dropped files', e.dataTransfer.files);
+    },
+  };
+
   return (
     <>
       <Form name="control-ref" className="absolute" id="form-ref" layout={formLayout}>

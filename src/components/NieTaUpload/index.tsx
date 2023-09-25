@@ -14,10 +14,10 @@ const index: React.FC = () => {
     <div className="upload-box">
       <div className="tabbar">
         <button className={`tab ${activeTab === 0 ? 'active' : ''}`} onClick={() => changeTab(0)}>
-          上传模型文件(Disabled)
+          上传模型文件
         </button>
         <button className={`tab ${activeTab === 1 ? 'active' : ''}`} onClick={() => changeTab(1)}>
-          粘贴模型链接(Beta)
+          粘贴模型链接
         </button>
       </div>
 
