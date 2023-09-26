@@ -17,7 +17,7 @@
 
 ### 🧑‍🚀 Record
 * **Date: 2023.9.24**
-* <img width='100px' height='100px' src="https://z1.ax1x.com/2023/09/24/pPTxxu6.png"></img>
+* <img width='100px' height='100px' src="http://121.36.100.147:9000/test/微信图片_20230926163915.png"></img>
 
 
 ### 🚀 Install
@@ -30,7 +30,7 @@
 
 
 ### 👀 Preview
-[![pPTxR9s.png](https://github.com/huccct/huccct.github.io/blob/master/assets/page%201.png)](https://github.com/huccct/huccct.github.io/blob/master/assets/page%201.png)
+[![nieta](https://github.com/huccct/huccct.github.io/blob/master/assets/page%201.png)](https://github.com/huccct/huccct.github.io/blob/master/assets/page%201.png)
 
 
   
