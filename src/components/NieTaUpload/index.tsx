@@ -1,3 +1,4 @@
+import { message } from 'antd';
 import UploadFile from './components/UploadFile';
 import UploadLink from './components/UploadLink';
 import './styles/index.scss';
@@ -7,7 +8,11 @@ const index: React.FC = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   const changeTab = (index) => {
-    setActiveTab(index);
+    if (index === 1) {
+      setActiveTab(index);
+    } else if (index === 0) {
+      message.warning('暂不支持上传模型文件');
+    }
   };
 
   return (

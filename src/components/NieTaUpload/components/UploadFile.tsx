@@ -18,13 +18,28 @@ export const UploadFile = () => {
     multiple: true,
     action: '',
     maxCount: 1,
-    onChange(info) {
+    async onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
         console.log(info.file, info.fileList);
       }
       if (status === 'done') {
-        message.success(`${info.file.name} 上传成功`);
+        // try {
+        //   const response = await fetch(`/v1/oss/sts-upload-token?suffix=${encodeURIComponent('.zip')}`, {
+        //     method: 'GET',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //   });
+        //   if (!response.ok) {
+        //     throw new Error('Failed to fetch upload token');
+        //   }
+        //   const data = await response.json();
+        //   message.success('文件上传成功');
+        // } catch (error) {
+        //   console.error('上传文件出错:', error);
+        //   message.error('文件上传失败');
+        // }
       } else if (status === 'error') {
         message.error(`${info.file.name} 上传失败`);
       }
