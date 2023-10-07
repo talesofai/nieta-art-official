@@ -6,6 +6,7 @@ module.exports = {
           ['@components', './src/components'],
           ['@assets', './src/assets'],
           ['@styles', './src/styles'],
+          ['@fonts, ./src/fonts'],
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.astro'],
       },
