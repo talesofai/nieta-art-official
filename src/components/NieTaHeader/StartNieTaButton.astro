@@ -4,3 +4,10 @@ import { Image } from 'astro:assets';
 ---
 
 <Image src={StartNieTa} alt="StartNieTa" decoding="async" loading="lazy" class="cursor-pointer" id="StartNieTa" />
+
+<script>
+  const StartNieTa = document.querySelector('#StartNieTa');
+  StartNieTa?.addEventListener('click', () => {
+    window.location.href = 'https://app.nieta.art/';
+  });
+</script>
