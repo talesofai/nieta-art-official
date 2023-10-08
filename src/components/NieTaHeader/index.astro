@@ -186,7 +186,9 @@ import NavBar from './NavBar.astro';
     }
   });
 
+  let timeout1, timeout2;
   joinCommunity?.addEventListener('mouseenter', () => {
+    clearTimeout(timeout1);
     joinCommunity.src = joinCommunityActive.src;
     joinCommunityFrameWork.style.display = 'block';
     joinCommunityQrCode.style.display = 'block';
@@ -194,13 +196,13 @@ import NavBar from './NavBar.astro';
 
   joinCommunity?.addEventListener('mouseleave', () => {
     joinCommunity.src = JoinCommunityNormal.src;
-    setTimeout(() => {
+    timeout1 = setTimeout(() => {
       joinCommunityFrameWork.style.display = 'none';
       joinCommunityQrCode.style.display = 'none';
-    }, 500);
+    }, 300);
   });
-
   startNietTa?.addEventListener('mouseenter', () => {
+    clearTimeout(timeout2);
     startNietTa.src = startNietaActive.src;
     startNieTaFrameWork.style.display = 'block';
     startNieTaQrCode.style.display = 'block';
@@ -208,9 +210,9 @@ import NavBar from './NavBar.astro';
 
   startNietTa?.addEventListener('mouseleave', () => {
     startNietTa.src = startNietaNormal.src;
-    setTimeout(() => {
+    timeout2 = setTimeout(() => {
       startNieTaFrameWork.style.display = 'none';
       startNieTaQrCode.style.display = 'none';
-    }, 500);
+    }, 300);
   });
 </script>
