@@ -174,9 +174,9 @@ import NavBar from './NavBar.astro';
   const joinCommunityQrCode = document.querySelector('#qr-code-2') as HTMLImageElement;
   // navbar
   window.addEventListener('scroll', function () {
-    var navbar = document.getElementById('navbar')!;
-    var headerHeight = document.getElementById('navbar')?.offsetHeight!;
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let navbar = document.getElementById('navbar')!;
+    let headerHeight = document.getElementById('navbar')?.offsetHeight!;
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop >= headerHeight / 2) {
       navbar.style.backgroundColor = '#131B22';
       navbar.style.boxShadow = 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px';

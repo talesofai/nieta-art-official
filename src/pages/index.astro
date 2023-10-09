@@ -17,26 +17,26 @@ import Animation from './animation.astro';
 
 <script>
   window.addEventListener('load', function () {
-    var loader = document.getElementById('loader')!;
-    var progressBar = document.getElementById('progress-bar')!;
-    var bottomProgressBar = document.getElementById('bottom-progress-bar')!;
-    var percentage = document.getElementById('percentage')!;
-    var loadingText = document.getElementById('loading-text')!;
-    var mainContent = document.getElementById('main-content')!;
-    var animationBox = this.document.getElementById('animation-box')!;
-    var nietaHeader = document.querySelector('#nieta-header')! as HTMLDivElement;
-    var nietaContent1 = document.querySelector('#nieta-content1')! as HTMLDivElement;
-    var nietaContent2 = document.querySelector('#nieta-content2')! as HTMLDivElement;
-    var nietaContent3 = document.querySelector('#nieta-content3')! as HTMLDivElement;
-    var nietaFooter = document.querySelector('#nieta-footer')! as HTMLDivElement;
+    let loader = document.getElementById('loader')!;
+    let progressBar = document.getElementById('progress-bar')!;
+    let bottomProgressBar = document.getElementById('bottom-progress-bar')!;
+    let percentage = document.getElementById('percentage')!;
+    let loadingText = document.getElementById('loading-text')!;
+    let mainContent = document.getElementById('main-content')!;
+    let animationBox = this.document.getElementById('animation-box')!;
+    let nietaHeader = document.querySelector('#nieta-header')! as HTMLDivElement;
+    let nietaContent1 = document.querySelector('#nieta-content1')! as HTMLDivElement;
+    let nietaContent2 = document.querySelector('#nieta-content2')! as HTMLDivElement;
+    let nietaContent3 = document.querySelector('#nieta-content3')! as HTMLDivElement;
+    let nietaFooter = document.querySelector('#nieta-footer')! as HTMLDivElement;
 
-    var parent = mainContent.parentNode!;
-    var height = 0;
-    var width = 0;
-    var touchedPercentage = false;
+    let parent = mainContent.parentNode!;
+    let height = 0;
+    let width = 0;
+    let touchedPercentage = false;
 
     animationBox.style.backgroundColor = '#000';
-    var bottomInterval = setInterval(loadBottomProgress, 24);
+    let bottomInterval = setInterval(loadBottomProgress, 24);
     function loadBottomProgress() {
       if (width >= 100) {
         clearInterval(bottomInterval);
@@ -53,7 +53,7 @@ import Animation from './animation.astro';
     }
 
     function animateProgressBar() {
-      var interval = setInterval(frame, 2);
+      let interval = setInterval(frame, 2);
 
       function frame() {
         if (height >= 100) {
