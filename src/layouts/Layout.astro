@@ -23,52 +23,73 @@ const { title } = Astro.props;
     <slot />
   </body>
   <script>
-    import { loadLibPag } from '@utils/pag';
-    import Tower from '@assets/pag/tower.pag';
-    import Ball from '@assets/pag/ball.pag';
-
-    const imageList = [
-      { url: Tower, canvasId: 'pag1' },
-      { url: Ball, canvasId: 'pag2' },
-    ];
-
-    let pagViews = []; // 存储PAGView实例
-
-    window.addEventListener('DOMContentLoaded', () => {
-      loadLibPag().then((PAG) => {
-        const loadImages = imageList.map(({ url, canvasId }) => {
-          return fetch(url)
-            .then((response) => response.arrayBuffer())
-            .then(async (buffer) => {
-              const dpr = window.devicePixelRatio;
-              const pagFile = await PAG.PAGFile.load(buffer);
-              const canvas = document.getElementById(canvasId);
-              const styleDeclaration = window.getComputedStyle(canvas, null);
-              canvas.width = Number(styleDeclaration.width.replace('px', '')) * dpr;
-              canvas.height = Number(styleDeclaration.height.replace('px', '')) * dpr;
-              const pagView = await PAG.PAGView.init(pagFile, canvas, { useScale: false });
-              pagView.setRepeatCount(0);
-              pagViews.push({ canvas, pagView, pagFile });
-              await pagView.play();
-              return canvas;
-            });
-        });
-        Promise.all(loadImages).then(() => {
-          window.addEventListener('resize', resizeCanvas);
-        });
-      });
+    import lottie from 'lottie-web';
+    import Tower from '@assets/lottie/tower.json?url';
+    import Ball from '@assets/lottie/ball.json?url';
+    const animation1 = lottie.loadAnimation({
+      container: document.querySelector('#tower'), // Required
+      path: Tower, // Required
+      renderer: 'svg', // Required
+      loop: true, // Optional
+      autoplay: true, // Optional
+      name: 'tower', // Name for future reference. Optional.
     });
 
-    function resizeCanvas() {
-      pagViews.forEach(({ canvas, pagView, pagFile }) => {
-        const dpr = window.devicePixelRatio;
-        const styleDeclaration = window.getComputedStyle(canvas, null);
-        canvas.width = Number(styleDeclaration.width.replace('px', '')) * dpr;
-        canvas.height = Number(styleDeclaration.height.replace('px', '')) * dpr;
-        pagView.updateSize();
-        pagView.flush();
-      });
-    }
+    const animation2 = lottie.loadAnimation({
+      container: document.querySelector('#ball'), // Required
+      path: Ball, // Required
+      renderer: 'svg', // Required
+      loop: true, // Optional
+      autoplay: true, // Optional
+      name: 'ball', // Name for future reference. Optional.
+    });
+
+    // import { loadLibPag } from '@utils/pag';
+    // import Tower from '@assets/pag/tower.pag';
+    // import Ball from '@assets/pag/ball.pag';
+
+    // const imageList = [
+    //   { url: Tower, canvasId: 'pag1' },
+    //   { url: Ball, canvasId: 'pag2' },
+    // ];
+
+    // let pagViews = []; // 存储PAGView实例
+
+    // window.addEventListener('DOMContentLoaded', () => {
+    //   loadLibPag().then((PAG) => {
+    //     const loadImages = imageList.map(({ url, canvasId }) => {
+    //       return fetch(url)
+    //         .then((response) => response.arrayBuffer())
+    //         .then(async (buffer) => {
+    //           const dpr = window.devicePixelRatio;
+    //           const pagFile = await PAG.PAGFile.load(buffer);
+    //           const canvas = document.getElementById(canvasId);
+    //           const styleDeclaration = window.getComputedStyle(canvas, null);
+    //           canvas.width = Number(styleDeclaration.width.replace('px', '')) * dpr;
+    //           canvas.height = Number(styleDeclaration.height.replace('px', '')) * dpr;
+    //           const pagView = await PAG.PAGView.init(pagFile, canvas, { useScale: false });
+    //           pagView.setRepeatCount(0);
+    //           pagViews.push({ canvas, pagView, pagFile });
+    //           await pagView.play();
+    //           return canvas;
+    //         });
+    //     });
+    //     Promise.all(loadImages).then(() => {
+    //       window.addEventListener('resize', resizeCanvas);
+    //     });
+    //   });
+    // });
+
+    // function resizeCanvas() {
+    //   pagViews.forEach(({ canvas, pagView, pagFile }) => {
+    //     const dpr = window.devicePixelRatio;
+    //     const styleDeclaration = window.getComputedStyle(canvas, null);
+    //     canvas.width = Number(styleDeclaration.width.replace('px', '')) * dpr;
+    //     canvas.height = Number(styleDeclaration.height.replace('px', '')) * dpr;
+    //     pagView.updateSize();
+    //     pagView.flush();
+    //   });
+    // }
   </script>
 </html>
 <style is:global lang="scss">
