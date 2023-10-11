@@ -172,37 +172,65 @@ import NavBar from './NavBar.astro';
   const startNieTaQrCode = document.querySelector('#qr-code-1') as HTMLImageElement;
   const joinCommunityFrameWork = document.querySelector('#qr-code-framework-2') as HTMLDivElement;
   const joinCommunityQrCode = document.querySelector('#qr-code-2') as HTMLImageElement;
-  // navbar
-  window.addEventListener('scroll', function () {
-    let navbar = document.getElementById('navbar')!;
-    let headerHeight = document.getElementById('navbar')?.offsetHeight!;
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop >= headerHeight / 2) {
-      navbar.style.backgroundColor = '#131B22';
-      navbar.style.boxShadow = 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px';
-    } else {
-      navbar.style.backgroundColor = '';
-      navbar.style.boxShadow = '';
-    }
-  });
+  const navbar = document.getElementById('navbar')!;
 
-  let timeout1, timeout2;
+  // 节流
+  function throttle(callback, delay) {
+    let timerId;
+    let lastExecutedTime = 0;
+
+    return function () {
+      const currentTime = Date.now();
+      const elapsedTime = currentTime - lastExecutedTime;
+
+      if (!timerId && elapsedTime > delay) {
+        callback();
+        lastExecutedTime = currentTime;
+      } else {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => {
+          callback();
+          lastExecutedTime = currentTime;
+          timerId = null;
+        }, delay - elapsedTime);
+      }
+    };
+  }
+
+  // navbar
+  window.addEventListener(
+    'scroll',
+    throttle(function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const headerHeight = navbar.offsetHeight;
+
+      if (scrollTop >= headerHeight / 2) {
+        navbar.style.backgroundColor = '#131B22';
+        navbar.style.boxShadow = 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px';
+      } else {
+        navbar.style.backgroundColor = '';
+        navbar.style.boxShadow = '';
+      }
+    }, 100),
+  );
+
   joinCommunity?.addEventListener('mouseenter', () => {
-    clearTimeout(timeout1);
     joinCommunity.src = joinCommunityActive.src;
     joinCommunityFrameWork.style.display = 'block';
     joinCommunityQrCode.style.display = 'block';
   });
 
+  let animationFrame1, animationFrame2;
+
   joinCommunity?.addEventListener('mouseleave', () => {
     joinCommunity.src = JoinCommunityNormal.src;
-    timeout1 = setTimeout(() => {
+    cancelAnimationFrame(animationFrame1);
+    animationFrame1 = requestAnimationFrame(() => {
       joinCommunityFrameWork.style.display = 'none';
       joinCommunityQrCode.style.display = 'none';
-    }, 300);
+    });
   });
   startNietTa?.addEventListener('mouseenter', () => {
-    clearTimeout(timeout2);
     startNietTa.src = startNietaActive.src;
     startNieTaFrameWork.style.display = 'block';
     startNieTaQrCode.style.display = 'block';
@@ -210,9 +238,10 @@ import NavBar from './NavBar.astro';
 
   startNietTa?.addEventListener('mouseleave', () => {
     startNietTa.src = startNietaNormal.src;
-    timeout2 = setTimeout(() => {
+    cancelAnimationFrame(animationFrame2);
+    animationFrame2 = requestAnimationFrame(() => {
       startNieTaFrameWork.style.display = 'none';
       startNieTaQrCode.style.display = 'none';
-    }, 300);
+    });
   });
 </script>

@@ -67,8 +67,8 @@ import NieTaContentThree from './NieTaContentThree.astro';
       threshold: scrollTrigger,
     });
 
-    nietaContentElements.forEach((element) => {
+    for (const element of nietaContentElements) {
       observer.observe(element);
-    });
+    }
   });
 </script>

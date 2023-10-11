@@ -33,8 +33,6 @@ export const UploadLink = () => {
 
     const payload = JSON.stringify({ ...values });
 
-    const loadingMessage = message.loading('Uploading model...', 0);
-
     let url = '/api/v1/util/upload-model';
 
     if (process.env.NODE_ENV === 'production') {
@@ -49,18 +47,18 @@ export const UploadLink = () => {
         body: payload,
       });
 
-      const data = await response.json();
-      console.log(data);
-      setTimeout(loadingMessage, 0);
-      message.success('Upload successful');
+      if (response.ok) {
+        message.success('文件上传成功！');
+      } else {
+        message.error('文件上传失败~');
+      }
     } catch (error) {
-      console.error(error);
-      setTimeout(loadingMessage, 0);
-      message.error('Upload failed');
+      message.error(`文件上传失败：${error.message}`);
     }
   };
   return (
     <>
+      {/* form表单 */}
       <Form
         name="control-ref"
         className="absolute"

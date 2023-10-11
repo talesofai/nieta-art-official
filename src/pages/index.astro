@@ -17,18 +17,18 @@ import Animation from './animation.astro';
 
 <script>
   window.addEventListener('load', function () {
-    let loader = document.getElementById('loader')!;
-    let progressBar = document.getElementById('progress-bar')!;
-    let bottomProgressBar = document.getElementById('bottom-progress-bar')!;
-    let percentage = document.getElementById('percentage')!;
-    let loadingText = document.getElementById('loading-text')!;
-    let mainContent = document.getElementById('main-content')!;
-    let animationBox = this.document.getElementById('animation-box')!;
-    let nietaHeader = document.querySelector('#nieta-header')! as HTMLDivElement;
-    let nietaContent1 = document.querySelector('#nieta-content1')! as HTMLDivElement;
-    let nietaContent2 = document.querySelector('#nieta-content2')! as HTMLDivElement;
-    let nietaContent3 = document.querySelector('#nieta-content3')! as HTMLDivElement;
-    let nietaFooter = document.querySelector('#nieta-footer')! as HTMLDivElement;
+    const loader = document.getElementById('loader')!;
+    const progressBar = document.getElementById('progress-bar')!;
+    const bottomProgressBar = document.getElementById('bottom-progress-bar')!;
+    const percentage = document.getElementById('percentage')!;
+    const loadingText = document.getElementById('loading-text')!;
+    const mainContent = document.getElementById('main-content')!;
+    const animationBox = this.document.getElementById('animation-box')!;
+    const nietaHeader = document.querySelector('#nieta-header')! as HTMLDivElement;
+    const nietaContent1 = document.querySelector('#nieta-content1')! as HTMLDivElement;
+    const nietaContent2 = document.querySelector('#nieta-content2')! as HTMLDivElement;
+    const nietaContent3 = document.querySelector('#nieta-content3')! as HTMLDivElement;
+    const nietaFooter = document.querySelector('#nieta-footer')! as HTMLDivElement;
 
     let parent = mainContent.parentNode!;
     let height = 0;
@@ -88,11 +88,15 @@ import Animation from './animation.astro';
                 bottomProgressBar.remove();
                 percentage.remove();
                 loadingText.remove();
-                parent.insertBefore(nietaHeader, mainContent);
-                parent.insertBefore(nietaContent1, mainContent);
-                parent.insertBefore(nietaContent2, mainContent);
-                parent.insertBefore(nietaContent3, mainContent);
-                parent.insertBefore(nietaFooter, mainContent);
+
+                const fragment = document.createDocumentFragment();
+                fragment.appendChild(nietaHeader);
+                fragment.appendChild(nietaContent1);
+                fragment.appendChild(nietaContent2);
+                fragment.appendChild(nietaContent3);
+                fragment.appendChild(nietaFooter);
+
+                parent.insertBefore(fragment, mainContent);
               }, 1500);
             }
           }
