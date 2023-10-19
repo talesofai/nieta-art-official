@@ -21,38 +21,45 @@ const { title } = Astro.props;
     <link rel="icon" type="image/x-icon" href="https://oss.talesofai.cn/static/talesofai-h5/favicon.ico" />
     <title>{title}</title>
     <link rel="preload" as="font" href="src/fonts/Roboto-BoldCondensedItalic.ttf" />
+    <script is:inline>
+    (function (win, export_obj) {
+      win['LogAnalyticsObject'] = export_obj;
+      if (!win[export_obj]) {
+        function _collect() {
+          _collect.q.push(arguments);
+        }
+        _collect.q = _collect.q || [];
+        win[export_obj] = _collect;
+      }
+      win[export_obj].l = +new Date();
+    })(window, 'collectEvent');
+    </script>
+    <script async src="https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.6.js"
+    ></script>
   </head>
   <body>
     <slot />
     <script>
+      import { VolcengineSDK } from '@utils/web-tracker';
+      VolcengineSDK.init({
+        app_id: 20001598,
+        channel_domain: 'https://gator.volces.com',
+        cross_subdomain: true,
+        disable_sdk_monitor: true,
+        enable_stay_duration: true,
+        autotrack: true,
+        log: true,
+        enable_debug: true,
+      });
+      VolcengineSDK.start();
+
+      // 进入官网
+      VolcengineSDK.event('nieta_official.view');
+    </script>
+    <script>
       import lottie from 'lottie-web';
       import Tower from '@assets/lottie/tower.json?url';
       import Ball from '@assets/lottie/ball.json?url';
-      // 补充埋点
-      // 安装代码 (SaaS版本)
-      (function (win: Window, export_obj: string) {
-        win['LogAnalyticsObject'] = export_obj;
-        if (!win[export_obj]) {
-          var _collect = function () {
-            _collect.q.push(arguments);
-          };
-          _collect.q = _collect.q || [];
-          win[export_obj] = _collect;
-        }
-        win[export_obj].l = +new Date();
-      })(window, 'collectEvent');
-
-      window.collectEvent('init', {
-        app_id: 20000967, // 参考2.1节获取，注意类型是number而非字符串
-        channel: 'cn', // 设置数据上送地址
-        log: true, // true:开启日志，false:关闭日志
-        autotrack: false, // 全埋点开关，true开启，false关闭
-      });
-      // 此处可添加设置uuid、设置公共属性等代码
-      window.collectEvent('start'); // 通知SDK设置完毕，可以真正开始发送事件了
-
-      // 进入官网
-      window.collectEvent('nieta_official.view');
 
       // lottie动画
       const animation1 = lottie.loadAnimation({
@@ -128,50 +135,47 @@ const { title } = Astro.props;
   }
 </style>
 <script is:inline>
-  (function flexible(window, document) {
-    var docEl = document.documentElement;
-    var dpr = window.devicePixelRatio || 1;
+(function flexible(window, document) {
+  var docEl = document.documentElement;
+  var dpr = window.devicePixelRatio || 1;
 
-    // adjust body font size
-    function setBodyFontSize() {
-      if (document.body) {
-        document.body.style.fontSize = 12 * dpr + 'px';
-      } else {
-        document.addEventListener('DOMContentLoaded', setBodyFontSize);
-      }
+  // adjust body font size
+  function setBodyFontSize() {
+    if (document.body) {
+      document.body.style.fontSize = 12 * dpr + 'px';
+    } else {
+      document.addEventListener('DOMContentLoaded', setBodyFontSize);
     }
-    setBodyFontSize();
+  }
+  setBodyFontSize();
 
-    // set 1rem = viewWidth / 10
-    function setRemUnit() {
-      var rem = docEl.clientWidth / 10;
-      docEl.style.fontSize = rem + 'px';
+  // set 1rem = viewWidth / 10
+  function setRemUnit() {
+    var rem = docEl.clientWidth / 10;
+    docEl.style.fontSize = rem + 'px';
+  }
+
+  setRemUnit();
+
+  // reset rem unit on page resize
+  window.addEventListener('resize', setRemUnit);
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      setRemUnit();
     }
+  });
 
-    setRemUnit();
-
-    // reset rem unit on page resize
-    window.addEventListener('resize', setRemUnit);
-    window.addEventListener('pageshow', function (e) {
-      if (e.persisted) {
-        setRemUnit();
-      }
-    });
-
-    // detect 0.5px supports
-    if (dpr >= 2) {
-      var fakeBody = document.createElement('body');
-      var testElement = document.createElement('div');
-      testElement.style.border = '.5px solid transparent';
-      fakeBody.appendChild(testElement);
-      docEl.appendChild(fakeBody);
-      if (testElement.offsetHeight === 1) {
-        docEl.classList.add('hairlines');
-      }
-      docEl.removeChild(fakeBody);
+  // detect 0.5px supports
+  if (dpr >= 2) {
+    var fakeBody = document.createElement('body');
+    var testElement = document.createElement('div');
+    testElement.style.border = '.5px solid transparent';
+    fakeBody.appendChild(testElement);
+    docEl.appendChild(fakeBody);
+    if (testElement.offsetHeight === 1) {
+      docEl.classList.add('hairlines');
     }
-  })(window, document);
+    docEl.removeChild(fakeBody);
+  }
+})(window, document);
 </script>
-<script
-  is:inline
-  src="https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.6.feature.js"></script>

@@ -166,6 +166,7 @@ import NavBar from './NavBar.astro';
   import JoinCommunityNormal from '@assets/button/join-community.svg';
   import startNietaActive from '@assets/button/start-nieta-active.svg';
   import startNietaNormal from '@assets/button/start-nieta.svg';
+  import { VolcengineSDK } from '@utils/web-tracker';
   const startNietTa = document.querySelector('#StartNieTa') as HTMLImageElement;
   const joinCommunity = document.querySelector('#JoinCommunity') as HTMLImageElement;
   const startNieTaFrameWork = document.querySelector('#qr-code-framework-1') as HTMLDivElement;
@@ -218,7 +219,7 @@ import NavBar from './NavBar.astro';
     joinCommunity.src = joinCommunityActive.src;
     joinCommunityFrameWork.style.display = 'block';
     joinCommunityQrCode.style.display = 'block';
-    window.collectEvent('nieta_official.join.hover');
+    VolcengineSDK.event('nieta_official.join.hover');
   });
 
   let animationFrame1, animationFrame2;
@@ -235,7 +236,7 @@ import NavBar from './NavBar.astro';
     startNietTa.src = startNietaActive.src;
     startNieTaFrameWork.style.display = 'block';
     startNieTaQrCode.style.display = 'block';
-    window.collectEvent('nieta_official.start.hover');
+    VolcengineSDK.event('nieta_official.start.hover');
   });
 
   startNietTa?.addEventListener('mouseleave', () => {

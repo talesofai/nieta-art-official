@@ -6,8 +6,10 @@ import { Image } from 'astro:assets';
 <Image src={Upload} alt="Upload" decoding="async" loading="lazy" class="cursor-pointer" id="UploadModal" />
 
 <script>
+  import { VolcengineSDK } from '@utils/web-tracker';
+
   const uploadModel = document.querySelector('#UploadModal');
-  window.collectEvent('nieta_official.model_upload.click');
+  VolcengineSDK.event('nieta_official.model_upload.click');
   setTimeout(() => {
     uploadModel?.addEventListener('click', () => {
       window.location.href = '/upload';
