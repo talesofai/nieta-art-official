@@ -28,8 +28,35 @@ const { title } = Astro.props;
       import lottie from 'lottie-web';
       import Tower from '@assets/lottie/tower.json?url';
       import Ball from '@assets/lottie/ball.json?url';
+      // 补充埋点
+      // 安装代码 (SaaS版本)
+      (function (win: Window, export_obj: string) {
+        win['LogAnalyticsObject'] = export_obj;
+        if (!win[export_obj]) {
+          var _collect = function () {
+            _collect.q.push(arguments);
+          };
+          _collect.q = _collect.q || [];
+          win[export_obj] = _collect;
+        }
+        win[export_obj].l = +new Date();
+      })(window, 'collectEvent');
+
+      window.collectEvent('init', {
+        app_id: 20000967, // 参考2.1节获取，注意类型是number而非字符串
+        channel: 'cn', // 设置数据上送地址
+        log: true, // true:开启日志，false:关闭日志
+        autotrack: false, // 全埋点开关，true开启，false关闭
+      });
+      // 此处可添加设置uuid、设置公共属性等代码
+      window.collectEvent('start'); // 通知SDK设置完毕，可以真正开始发送事件了
+
+      // 进入官网
+      window.collectEvent('nieta_official.view');
+
+      // lottie动画
       const animation1 = lottie.loadAnimation({
-        container: document.querySelector('#tower'), // Required
+        container: document.querySelector('#tower')!, // Required
         path: Tower, // Required
         renderer: 'svg', // Required
         loop: true, // Optional
@@ -38,7 +65,7 @@ const { title } = Astro.props;
       });
 
       const animation2 = lottie.loadAnimation({
-        container: document.querySelector('#ball'), // Required
+        container: document.querySelector('#ball')!, // Required
         path: Ball, // Required
         renderer: 'svg', // Required
         loop: true, // Optional

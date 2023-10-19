@@ -7,7 +7,10 @@ import { Image } from 'astro:assets';
 
 <script>
   const StartNieTa = document.querySelector('#StartNieTa');
-  StartNieTa?.addEventListener('click', () => {
-    window.open('https://app.nieta.art', '_self')
-  });
+  window.collectEvent('nieta_official.start.click');
+  setTimeout(() => {
+    StartNieTa?.addEventListener('click', () => {
+      window.open('https://app.nieta.art/?channel_from=nieta_art_official', '_self');
+    });
+  }, 150);
 </script>

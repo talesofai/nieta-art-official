@@ -218,6 +218,7 @@ import NavBar from './NavBar.astro';
     joinCommunity.src = joinCommunityActive.src;
     joinCommunityFrameWork.style.display = 'block';
     joinCommunityQrCode.style.display = 'block';
+    window.collectEvent('nieta_official.join.hover');
   });
 
   let animationFrame1, animationFrame2;
@@ -234,6 +235,7 @@ import NavBar from './NavBar.astro';
     startNietTa.src = startNietaActive.src;
     startNieTaFrameWork.style.display = 'block';
     startNieTaQrCode.style.display = 'block';
+    window.collectEvent('nieta_official.start.hover');
   });
 
   startNietTa?.addEventListener('mouseleave', () => {
