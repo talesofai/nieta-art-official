@@ -4,8 +4,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nieta.art/official',
-  base: '/official',
+  site: 'https://nieta.art/',
+  base: '/',
   integrations: [tailwind(), react()],
   output: 'static',
   build: {
