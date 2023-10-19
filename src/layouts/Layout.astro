@@ -21,7 +21,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/x-icon" href="https://oss.talesofai.cn/static/talesofai-h5/favicon.ico" />
     <title>{title}</title>
     <link rel="preload" as="font" href="src/fonts/Roboto-BoldCondensedItalic.ttf" />
-    <script is:inline>
+    <!-- <script is:inline>
     (function (win, export_obj) {
       win['LogAnalyticsObject'] = export_obj;
       if (!win[export_obj]) {
@@ -35,11 +35,11 @@ const { title } = Astro.props;
     })(window, 'collectEvent');
     </script>
     <script async src="https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.6.js"
-    ></script>
+    ></script> -->
   </head>
   <body>
     <slot />
-    <script>
+    <!-- <script>
       import { VolcengineSDK } from '@utils/web-tracker';
       VolcengineSDK.init({
         app_id: 20001598,
@@ -55,7 +55,7 @@ const { title } = Astro.props;
 
       // 进入官网
       VolcengineSDK.event('nieta_official.view');
-    </script>
+    </script> -->
     <script>
       import lottie from 'lottie-web';
       import Tower from '@assets/lottie/tower.json?url';
@@ -135,47 +135,47 @@ const { title } = Astro.props;
   }
 </style>
 <script is:inline>
-(function flexible(window, document) {
-  var docEl = document.documentElement;
-  var dpr = window.devicePixelRatio || 1;
+  (function flexible(window, document) {
+    var docEl = document.documentElement;
+    var dpr = window.devicePixelRatio || 1;
 
-  // adjust body font size
-  function setBodyFontSize() {
-    if (document.body) {
-      document.body.style.fontSize = 12 * dpr + 'px';
-    } else {
-      document.addEventListener('DOMContentLoaded', setBodyFontSize);
+    // adjust body font size
+    function setBodyFontSize() {
+      if (document.body) {
+        document.body.style.fontSize = 12 * dpr + 'px';
+      } else {
+        document.addEventListener('DOMContentLoaded', setBodyFontSize);
+      }
     }
-  }
-  setBodyFontSize();
+    setBodyFontSize();
 
-  // set 1rem = viewWidth / 10
-  function setRemUnit() {
-    var rem = docEl.clientWidth / 10;
-    docEl.style.fontSize = rem + 'px';
-  }
-
-  setRemUnit();
-
-  // reset rem unit on page resize
-  window.addEventListener('resize', setRemUnit);
-  window.addEventListener('pageshow', function (e) {
-    if (e.persisted) {
-      setRemUnit();
+    // set 1rem = viewWidth / 10
+    function setRemUnit() {
+      var rem = docEl.clientWidth / 10;
+      docEl.style.fontSize = rem + 'px';
     }
-  });
 
-  // detect 0.5px supports
-  if (dpr >= 2) {
-    var fakeBody = document.createElement('body');
-    var testElement = document.createElement('div');
-    testElement.style.border = '.5px solid transparent';
-    fakeBody.appendChild(testElement);
-    docEl.appendChild(fakeBody);
-    if (testElement.offsetHeight === 1) {
-      docEl.classList.add('hairlines');
+    setRemUnit();
+
+    // reset rem unit on page resize
+    window.addEventListener('resize', setRemUnit);
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        setRemUnit();
+      }
+    });
+
+    // detect 0.5px supports
+    if (dpr >= 2) {
+      var fakeBody = document.createElement('body');
+      var testElement = document.createElement('div');
+      testElement.style.border = '.5px solid transparent';
+      fakeBody.appendChild(testElement);
+      docEl.appendChild(fakeBody);
+      if (testElement.offsetHeight === 1) {
+        docEl.classList.add('hairlines');
+      }
+      docEl.removeChild(fakeBody);
     }
-    docEl.removeChild(fakeBody);
-  }
-})(window, document);
+  })(window, document);
 </script>
