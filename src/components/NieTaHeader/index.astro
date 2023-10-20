@@ -219,7 +219,7 @@ import NavBar from './NavBar.astro';
     joinCommunity.src = joinCommunityActive.src;
     joinCommunityFrameWork.style.display = 'block';
     joinCommunityQrCode.style.display = 'block';
-    // VolcengineSDK.event('nieta_official.join.hover');
+    VolcengineSDK.event('nieta_official.join.hover');
   });
 
   let animationFrame1, animationFrame2;
@@ -236,7 +236,7 @@ import NavBar from './NavBar.astro';
     startNietTa.src = startNietaActive.src;
     startNieTaFrameWork.style.display = 'block';
     startNieTaQrCode.style.display = 'block';
-    // VolcengineSDK.event('nieta_official.start.hover');
+    VolcengineSDK.event('nieta_official.start.hover');
   });
 
   startNietTa?.addEventListener('mouseleave', () => {

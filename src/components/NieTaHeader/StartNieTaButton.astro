@@ -9,7 +9,7 @@ import { Image } from 'astro:assets';
   import { VolcengineSDK } from '@utils/web-tracker';
 
   const StartNieTa = document.querySelector('#StartNieTa');
-  // VolcengineSDK.event('nieta_official.start.click');
+  VolcengineSDK.event('nieta_official.start.click');
   setTimeout(() => {
     StartNieTa?.addEventListener('click', () => {
       window.open('https://app.nieta.art/?channel_from=nieta_art_official', '_self');

@@ -21,25 +21,25 @@ const { title } = Astro.props;
     <link rel="icon" type="image/x-icon" href="https://oss.talesofai.cn/static/talesofai-h5/favicon.ico" />
     <title>{title}</title>
     <link rel="preload" as="font" href="src/fonts/Roboto-BoldCondensedItalic.ttf" />
-    <!-- <script is:inline>
-    (function (win, export_obj) {
-      win['LogAnalyticsObject'] = export_obj;
-      if (!win[export_obj]) {
-        function _collect() {
-          _collect.q.push(arguments);
+    <script is:inline>
+      (function (win, export_obj) {
+        win['LogAnalyticsObject'] = export_obj;
+        if (!win[export_obj]) {
+          function _collect() {
+            _collect.q.push(arguments);
+          }
+          _collect.q = _collect.q || [];
+          win[export_obj] = _collect;
         }
-        _collect.q = _collect.q || [];
-        win[export_obj] = _collect;
-      }
-      win[export_obj].l = +new Date();
-    })(window, 'collectEvent');
+        win[export_obj].l = +new Date();
+      })(window, 'collectEvent');
     </script>
     <script async src="https://lf3-data.volccdn.com/obj/data-static/log-sdk/collect/5.0/collect-rangers-v5.1.6.js"
-    ></script> -->
+    ></script>
   </head>
   <body>
     <slot />
-    <!-- <script>
+    <script>
       import { VolcengineSDK } from '@utils/web-tracker';
       VolcengineSDK.init({
         app_id: 20001598,
@@ -55,7 +55,7 @@ const { title } = Astro.props;
 
       // 进入官网
       VolcengineSDK.event('nieta_official.view');
-    </script> -->
+    </script>
     <script>
       import lottie from 'lottie-web';
       import Tower from '@assets/lottie/tower.json?url';
