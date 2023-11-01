@@ -38,5 +38,5 @@
 
 ### 💼 Final
 
-* **Copyright © 看见概念（上海）智能科技有限公司 2023 沪ICP备2023001339号-1**
-* **contact@talesof.ai**
+* **Copyright © 看见概念（上海）智能科技有限公司 2023 沪ICP备2023001339号-2**
+* **contact@nieta.art**
