@@ -3,18 +3,37 @@ import Text from '@assets/text/bottom-nieta-text.svg';
 import { Image } from 'astro:assets';
 ---
 
-<footer class="relative" style="background: #131B22;" id="nieta-footer">
+<footer
+  class="relative"
+  style={{
+    background: '#131B22',
+    display: 'flex',
+    'align-items': 'center',
+  }}
+  id="nieta-footer"
+>
   <!-- text -->
-  <div class="absolute" id="text-5">
+  <div
+    id="text-5"
+    style={{
+      'margin-left': '10%',
+      'margin-right': '5%',
+    }}
+  >
     <Image src={Text} alt="Text" decoding="async" loading="lazy" />
   </div>
 
-  <!-- email -->
-  <div class="absolute" id="email">
+  <div
+    id="address"
+    style={{
+      'margin-left': 'auto',
+    }}
+  >
     <span>邮箱：contact@nieta.art</span>
-  </div>
-
-  <div class="absolute" id="address">
-    <span>Copyright © 看见概念（上海）智能科技有限公司 2023 沪ICP备2023001339号-2</span>
+    <span>Copyright © 看见概念（上海）智能科技有限公司 2023</span>
+    <span>沪ICP备2023001339号-2</span>
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=31010102007646" rel="noreferrer" target="_blank"
+      >沪公网安备31010102007646</a
+    >
   </div>
 </footer>

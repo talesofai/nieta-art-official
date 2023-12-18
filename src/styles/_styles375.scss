@@ -463,41 +463,24 @@
     width: 1.973333rem;
     height: 0.88rem;
   }
-  /* nietafooter */
-  #text-5 {
-    top: 0.32rem;
-    left: 0.533333rem;
-  }
 
   #text-5 img {
     width: 1.12rem;
     height: 0.373333rem;
   }
 
-  #email {
-    top: 1.013333rem;
-    left: 0.533333rem;
-    right: 0.533333rem;
-    width: 3.733333rem;
-    height: 0.453333rem;
-    color: #fff;
-    font-size: 0.32rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    white-space: nowrap;
-  }
-
   #address {
-    top: 1.573333rem;
-    left: 0.533333rem;
-    right: 0.533333rem;
-    width: 8.933333rem;
-    height: 0.906667rem;
     color: #fff;
     font-size: 0.32rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    span {
+      margin-right: 1rem;
+    }
   }
 }

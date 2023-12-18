@@ -366,30 +366,18 @@
     height: 0.125rem;
   }
 
-  #email {
-    top: 0.122396rem;
-    bottom: 0.122396rem;
-    right: 3.661458rem;
-    height: 0.088542rem;
-    color: #fff;
-    font-size: 0.0625rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    white-space: nowrap;
-  }
-
   #address {
-    top: 0.122396rem;
-    bottom: 0.122396rem;
-    right: 1.260417rem;
-    width: 2.276042rem;
-    height: 0.088542rem;
     color: #fff;
     font-size: 0.0625rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    white-space: nowrap;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    span {
+      margin-right: 1rem;
+    }
   }
 }
